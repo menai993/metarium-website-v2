@@ -26,6 +26,7 @@ export default function Home() {
               <h1 className="text-2xl font-bold text-blue-600">Metarium</h1>
             </div>
             <div className="hidden md:flex space-x-8">
+              <a href="#platform" className="text-gray-700 hover:text-blue-600 transition">Platform</a>
               <a href="#features" className="text-gray-700 hover:text-blue-600 transition">Features</a>
               <a href="#download" className="text-gray-700 hover:text-blue-600 transition">Download</a>
               <a href="#pricing" className="text-gray-700 hover:text-blue-600 transition">Pricing</a>
@@ -45,12 +46,14 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-              Enterprise Database
-              <span className="text-blue-600"> Intelligence Platform</span>
+              The Intelligent Database
+              <span className="text-blue-600"> Operations Platform</span>
             </h1>
-            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              Unlock the full potential of your SQL Server infrastructure with AI-powered monitoring, 
-              advanced analytics, and intelligent optimization.
+            <p className="text-xl md:text-2xl text-blue-600 font-semibold mb-4">
+              Stop reacting to database problems. Start predicting them.
+            </p>
+            <p className="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
+              Metarium is an enterprise-grade, AI-powered SQL Server intelligence platform that transforms raw database telemetry into actionable insights — automatically. It discovers, catalogs, monitors, and analyzes your entire SQL Server infrastructure, giving your team a single pane of glass for metadata management, performance intelligence, and compliance governance.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="#register" className="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition shadow-lg">
@@ -69,116 +72,280 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Comprehensive Database Intelligence
+              Platform Capabilities
             </h2>
             <p className="text-xl text-gray-600">
-              Everything you need to monitor, optimize, and secure your database infrastructure
+              Everything you need to monitor, analyze, predict, and optimize your database infrastructure
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* SQL Server Monitoring */}
+          <div id="platform" className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Monitoring & Observability */}
             <div className="bg-blue-50 p-8 rounded-xl hover:shadow-xl transition">
               <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">SQL Server Monitoring</h3>
-              <p className="text-gray-600">
-                Real-time monitoring of SQL Server performance, health metrics, and resource utilization with intelligent alerts.
-              </p>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Monitoring &amp; Observability</h3>
+              <ul className="text-gray-600 space-y-1 text-sm list-disc list-inside">
+                <li>Server Metrics</li>
+                <li>Instance Metrics</li>
+                <li>Database Health Scoring</li>
+                <li>SQL Agent Monitoring</li>
+              </ul>
             </div>
 
-            {/* Metadata & Data Catalog */}
+            {/* Metadata Intelligence */}
             <div className="bg-blue-50 p-8 rounded-xl hover:shadow-xl transition">
               <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Metadata & Data Catalog</h3>
-              <p className="text-gray-600">
-                Comprehensive data catalog with automatic metadata discovery, lineage tracking, and enterprise-wide data governance.
-              </p>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Metadata Intelligence</h3>
+              <ul className="text-gray-600 space-y-1 text-sm list-disc list-inside">
+                <li>30 Metadata Collectors</li>
+                <li>Change History</li>
+                <li>Object Catalog</li>
+                <li>Definition Snapshots</li>
+              </ul>
             </div>
 
-            {/* Query Analysis */}
+            {/* Query Performance Intelligence */}
             <div className="bg-blue-50 p-8 rounded-xl hover:shadow-xl transition">
               <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Query & Execution Plan Analysis</h3>
-              <p className="text-gray-600">
-                Deep analysis of query performance with visual execution plans, bottleneck identification, and optimization recommendations.
-              </p>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Query Performance Intelligence</h3>
+              <ul className="text-gray-600 space-y-1 text-sm list-disc list-inside">
+                <li>Heavy Query Detection</li>
+                <li>Regression Analysis</li>
+                <li>Execution Plan Tracking</li>
+                <li>Missing Index Recommendations</li>
+              </ul>
             </div>
 
-            {/* AI-Assisted Optimization */}
+            {/* Database Hygiene */}
+            <div className="bg-blue-50 p-8 rounded-xl hover:shadow-xl transition">
+              <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Database Hygiene</h3>
+              <ul className="text-gray-600 space-y-1 text-sm list-disc list-inside">
+                <li>Dead Object Detection</li>
+                <li>Execution Frequency Tracking</li>
+                <li>Object Popularity Scoring</li>
+              </ul>
+            </div>
+
+            {/* AI-Powered Analysis */}
             <div className="bg-blue-50 p-8 rounded-xl hover:shadow-xl transition">
               <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">AI-Assisted Optimization</h3>
-              <p className="text-gray-600">
-                Machine learning-powered recommendations for index optimization, query tuning, and resource allocation.
-              </p>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">AI-Powered Analysis</h3>
+              <ul className="text-gray-600 space-y-1 text-sm list-disc list-inside">
+                <li>Multi-Provider LLM Support</li>
+                <li>6-Stage Analysis Pipeline</li>
+                <li>Interactive AI Chat</li>
+                <li>AI-Generated Explanations</li>
+                <li>LLM Optimization Advisor</li>
+              </ul>
             </div>
 
-            {/* Server/Database Metrics */}
-            <div className="bg-blue-50 p-8 rounded-xl hover:shadow-xl transition">
-              <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Server/Database Metrics</h3>
-              <p className="text-gray-600">
-                Comprehensive metrics dashboard with customizable KPIs, trend analysis, and historical performance data.
-              </p>
-            </div>
-
-            {/* Node-Based Scheduling */}
-            <div className="bg-blue-50 p-8 rounded-xl hover:shadow-xl transition">
-              <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Node-Based Scheduling</h3>
-              <p className="text-gray-600">
-                Visual workflow designer for database maintenance tasks, ETL processes, and automated operations.
-              </p>
-            </div>
-
-            {/* Cloud & On-Prem Support */}
-            <div className="bg-blue-50 p-8 rounded-xl hover:shadow-xl transition">
-              <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">On-Prem & Cloud Support</h3>
-              <p className="text-gray-600">
-                Seamlessly manage databases across on-premises, Azure SQL, AWS RDS, and hybrid cloud environments.
-              </p>
-            </div>
-
-            {/* Security-First Design */}
+            {/* AI Safety & Governance */}
             <div className="bg-blue-50 p-8 rounded-xl hover:shadow-xl transition">
               <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Security-First Design</h3>
-              <p className="text-gray-600">
-                Enterprise-grade security with role-based access control, audit logging, encryption at rest and in transit.
+              <h3 className="text-xl font-bold text-gray-900 mb-3">AI Safety &amp; Governance</h3>
+              <ul className="text-gray-600 space-y-1 text-sm list-disc list-inside">
+                <li>5-Layer Safety System</li>
+                <li>Data Masking</li>
+                <li>Tenant Isolation</li>
+                <li>Explainable AI</li>
+              </ul>
+            </div>
+
+            {/* Dependency & Impact Analysis */}
+            <div className="bg-blue-50 p-8 rounded-xl hover:shadow-xl transition">
+              <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Dependency &amp; Impact Analysis</h3>
+              <ul className="text-gray-600 space-y-1 text-sm list-disc list-inside">
+                <li>Visual Dependency Graph</li>
+                <li>Cross-Database Dependencies</li>
+                <li>Change Impact Preview</li>
+              </ul>
+            </div>
+
+            {/* Enterprise Administration */}
+            <div className="bg-blue-50 p-8 rounded-xl hover:shadow-xl transition">
+              <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Enterprise Administration</h3>
+              <ul className="text-gray-600 space-y-1 text-sm list-disc list-inside">
+                <li>RBAC</li>
+                <li>Multi-Node HA</li>
+                <li>Object Ownership</li>
+                <li>Tagging &amp; Classification</li>
+                <li>Notification Subscriptions</li>
+                <li>License Management</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Problems We Solve Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              The Problems We Solve
+            </h2>
+            <p className="text-xl text-gray-600">
+              Whether you manage 1 database or 1,000, Metarium replaces guesswork with data-driven decisions
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition">
+              <h3 className="text-lg font-bold text-gray-900 mb-3">{'"'}We Don{"'"}t Know What Changed — Or When{'"'}</h3>
+              <p className="text-gray-600 text-sm">
+                Schema changes slip through unnoticed. Metarium tracks every change automatically with 30 specialized metadata collectors, full before-and-after diffs, timestamps, and audit trails.
               </p>
+            </div>
+
+            <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition">
+              <h3 className="text-lg font-bold text-gray-900 mb-3">{'"'}We Only Discover Slowdowns After Users Complain{'"'}</h3>
+              <p className="text-gray-600 text-sm">
+                Traditional monitoring tells you something is slow. Metarium tells you why — and warns you before it becomes a crisis with our 6-stage heavy query analysis pipeline.
+              </p>
+            </div>
+
+            <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition">
+              <h3 className="text-lg font-bold text-gray-900 mb-3">{'"'}We Have Indexes and Tables Nobody Uses{'"'}</h3>
+              <p className="text-gray-600 text-sm">
+                Metarium{"'"}s Dead Object Detection engine identifies unused tables, indexes, and columns with confidence-scored classifications.
+              </p>
+            </div>
+
+            <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition">
+              <h3 className="text-lg font-bold text-gray-900 mb-3">{'"'}We Deployed a Change and It Broke Something{'"'}</h3>
+              <p className="text-gray-600 text-sm">
+                Metarium{"'"}s Impact Analyzer maps every object dependency — including cross-database dependencies — and calculates the risk of any proposed change.
+              </p>
+            </div>
+
+            <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition">
+              <h3 className="text-lg font-bold text-gray-900 mb-3">{'"'}We Can{"'"}t Prove Where Sensitive Data Lives{'"'}</h3>
+              <p className="text-gray-600 text-sm">
+                Metarium automatically detects and classifies sensitive data (SSN, credit cards, emails, phone numbers, account numbers). All sensitive data is masked in AI interactions with full audit logging.
+              </p>
+            </div>
+
+            <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition">
+              <h3 className="text-lg font-bold text-gray-900 mb-3">{'"'}Our DBAs Spend Hours Correlating Metrics{'"'}</h3>
+              <p className="text-gray-600 text-sm">
+                Metarium automates the entire investigation pipeline with AI-powered analysis, freeing your DBAs to focus on strategic work.
+              </p>
+            </div>
+
+            <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition md:col-span-2 lg:col-span-1">
+              <h3 className="text-lg font-bold text-gray-900 mb-3">{'"'}We Have Zero Visibility Across Databases{'"'}</h3>
+              <p className="text-gray-600 text-sm">
+                Metarium{"'"}s Dependency Graph and Cross-Database Dependency Tracker map every relationship visually, giving you full cross-database visibility.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Predictive Intelligence Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Predictive Intelligence
+            </h2>
+            <p className="text-xl text-gray-600">
+              What Metarium predicts — before your users even notice a problem
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="bg-blue-50 p-8 rounded-xl text-center hover:shadow-xl transition">
+              <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4 mx-auto">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-3">Performance</h3>
+              <ul className="text-gray-600 text-sm space-y-1">
+                <li>Query Regression</li>
+                <li>Server Anomaly</li>
+                <li>Connection Spike</li>
+                <li>Deadlock Risk</li>
+              </ul>
+            </div>
+
+            <div className="bg-blue-50 p-8 rounded-xl text-center hover:shadow-xl transition">
+              <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4 mx-auto">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-3">Health</h3>
+              <ul className="text-gray-600 text-sm space-y-1">
+                <li>Stale Statistics</li>
+                <li>Index Fragmentation</li>
+                <li>Table Growth</li>
+              </ul>
+            </div>
+
+            <div className="bg-blue-50 p-8 rounded-xl text-center hover:shadow-xl transition">
+              <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4 mx-auto">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                </svg>
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-3">Optimization</h3>
+              <ul className="text-gray-600 text-sm space-y-1">
+                <li>Missing Indexes</li>
+                <li>Dead Object Candidates</li>
+                <li>Parameter Sniffing</li>
+              </ul>
+            </div>
+
+            <div className="bg-blue-50 p-8 rounded-xl text-center hover:shadow-xl transition">
+              <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4 mx-auto">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4.5c-.77-.833-2.694-.833-3.464 0L3.34 16.5c-.77.833.192 2.5 1.732 2.5z" />
+                </svg>
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-3">Risk</h3>
+              <ul className="text-gray-600 text-sm space-y-1">
+                <li>Change Impact</li>
+                <li>Compliance Exposure</li>
+                <li>Configuration Drift</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -397,14 +564,148 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Why Choose Metarium Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Why Choose Metarium
+            </h2>
+            <p className="text-xl text-gray-600">
+              Traditional Monitoring vs Metarium
+            </p>
+          </div>
+
+          <div className="overflow-x-auto">
+            <table className="w-full max-w-4xl mx-auto border-collapse">
+              <thead>
+                <tr>
+                  <th className="py-4 px-6 bg-gray-100 text-left text-gray-900 font-bold rounded-tl-xl">Capability</th>
+                  <th className="py-4 px-6 bg-gray-100 text-center text-gray-500 font-bold">Traditional Monitoring</th>
+                  <th className="py-4 px-6 bg-blue-600 text-center text-white font-bold rounded-tr-xl">Metarium</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-200">
+                <tr>
+                  <td className="py-4 px-6 text-gray-700">Approach</td>
+                  <td className="py-4 px-6 text-center text-gray-500">Reports metrics</td>
+                  <td className="py-4 px-6 text-center text-blue-600 font-semibold">Delivers intelligence</td>
+                </tr>
+                <tr>
+                  <td className="py-4 px-6 text-gray-700">Timing</td>
+                  <td className="py-4 px-6 text-center text-gray-500">Reacts after the fact</td>
+                  <td className="py-4 px-6 text-center text-blue-600 font-semibold">Predicts before impact</td>
+                </tr>
+                <tr>
+                  <td className="py-4 px-6 text-gray-700">Root Cause</td>
+                  <td className="py-4 px-6 text-center text-gray-500">Requires manual correlation</td>
+                  <td className="py-4 px-6 text-center text-blue-600 font-semibold">Automated root cause analysis</td>
+                </tr>
+                <tr>
+                  <td className="py-4 px-6 text-gray-700">Scope</td>
+                  <td className="py-4 px-6 text-center text-gray-500">Single-database view</td>
+                  <td className="py-4 px-6 text-center text-blue-600 font-semibold">Cross-database dependency mapping</td>
+                </tr>
+                <tr>
+                  <td className="py-4 px-6 text-gray-700">AI</td>
+                  <td className="py-4 px-6 text-center text-gray-500">No AI</td>
+                  <td className="py-4 px-6 text-center text-blue-600 font-semibold">Multi-provider LLM integration</td>
+                </tr>
+                <tr>
+                  <td className="py-4 px-6 text-gray-700">Change Tracking</td>
+                  <td className="py-4 px-6 text-center text-gray-500">Basic change logs</td>
+                  <td className="py-4 px-6 text-center text-blue-600 font-semibold">30 metadata collectors with full diff history</td>
+                </tr>
+                <tr>
+                  <td className="py-4 px-6 text-gray-700">Compliance</td>
+                  <td className="py-4 px-6 text-center text-gray-500">No compliance</td>
+                  <td className="py-4 px-6 text-center text-blue-600 font-semibold">Automatic PII detection and masking</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* Deployment Options Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Deployment Options
+            </h2>
+            <p className="text-xl text-gray-600">
+              Deploy Metarium wherever your infrastructure lives
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-6 max-w-4xl mx-auto">
+            <div className="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-xl transition">
+              <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-3 mx-auto">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2" />
+                </svg>
+              </div>
+              <h3 className="font-bold text-gray-900">On-Premises</h3>
+            </div>
+
+            <div className="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-xl transition">
+              <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-3 mx-auto">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+                </svg>
+              </div>
+              <h3 className="font-bold text-gray-900">Cloud</h3>
+            </div>
+
+            <div className="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-xl transition">
+              <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-3 mx-auto">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                </svg>
+              </div>
+              <h3 className="font-bold text-gray-900">Hybrid</h3>
+            </div>
+
+            <div className="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-xl transition">
+              <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-3 mx-auto">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                </svg>
+              </div>
+              <h3 className="font-bold text-gray-900">Containerized</h3>
+            </div>
+
+            <div className="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-xl transition col-span-2 md:col-span-1">
+              <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-3 mx-auto">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                </svg>
+              </div>
+              <h3 className="font-bold text-gray-900">HA Cluster</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Registration Section */}
       <section id="register" className="py-20 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Get Started Today</h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-600 mb-4">
               Start your 30-day free trial and experience the power of Metarium
             </p>
+            <div className="text-gray-500 max-w-2xl mx-auto text-left">
+              <p className="mb-3">Within minutes, Metarium begins its 5-step onboarding:</p>
+              <ol className="list-decimal list-inside space-y-1">
+                <li><strong>Discovering</strong> — Cataloging every object across your databases</li>
+                <li><strong>Monitoring</strong> — Capturing performance metrics and query statistics</li>
+                <li><strong>Analyzing</strong> — Detecting anomalies, regressions, and optimization opportunities</li>
+                <li><strong>Predicting</strong> — Forecasting issues before they impact your users</li>
+                <li><strong>Recommending</strong> — AI-powered suggestions with explainable reasoning</li>
+              </ol>
+            </div>
           </div>
 
           <form onSubmit={handleRegistration} className="bg-blue-50 p-8 rounded-xl">
@@ -510,7 +811,7 @@ export default function Home() {
             <div>
               <h3 className="text-xl font-bold mb-4">Metarium</h3>
               <p className="text-gray-400">
-                Enterprise Database Intelligence Platform
+                Metarium — Intelligent Database Operations. Monitor. Analyze. Predict. Optimize.
               </p>
             </div>
 
