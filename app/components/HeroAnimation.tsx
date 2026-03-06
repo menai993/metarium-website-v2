@@ -48,6 +48,10 @@ const FEATURES = [
   { label: 'Data Observability', icon: 'M15 12a3 3 0 11-6 0 3 3 0 016 0z M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z' },
 ];
 
+/* Total scroll distance (px) that drives the 5-stage animation timeline.
+   Each ~800px of scroll maps to roughly one animation stage. */
+const TOTAL_SCROLL_DISTANCE = 4000;
+
 export default function HeroAnimation() {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const columnsRef = useRef<(HTMLDivElement | null)[]>([]);
@@ -66,7 +70,7 @@ export default function HeroAnimation() {
         scrollTrigger: {
           trigger: wrapper,
           start: 'top top',
-          end: '+=4000',       // total scroll distance for the entire animation
+          end: `+=${TOTAL_SCROLL_DISTANCE}`,
           pin: true,
           scrub: 1,            // smooth scrub
           anticipatePin: 1,
@@ -236,13 +240,12 @@ export default function HeroAnimation() {
               ref={(el) => { cardsRef.current[i] = el; }}
               className="feature-card bg-white rounded-xl p-6 shadow-lg border border-gray-200 text-center"
             >
-              <div className="w-12 h-12 mx-auto rounded-lg flex items-center justify-center mb-4"
-                   style={{ background: BRAND.bg }}>
-                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke={BRAND.navy} strokeWidth={1.5}>
+              <div className="w-12 h-12 mx-auto rounded-lg flex items-center justify-center mb-4 bg-[#f0f4fc]">
+                <svg className="w-6 h-6 text-[#1f2f57]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d={feat.icon} />
                 </svg>
               </div>
-              <h3 className="text-sm font-bold" style={{ color: BRAND.navy }}>{feat.label}</h3>
+              <h3 className="text-sm font-bold text-[#1f2f57]">{feat.label}</h3>
             </div>
           ))}
         </div>
@@ -272,7 +275,7 @@ export default function HeroAnimation() {
               style={{ color: BRAND.navy }}>
             Metarium — AI-Driven Data Quality
             <br className="hidden sm:block" />
-            <span className="block sm:inline"> &amp; Monitoring Platform</span>
+            <span className="block sm:inline"> & Monitoring Platform</span>
           </h1>
           <div className="mt-8 flex flex-wrap gap-4 justify-center">
             <a
