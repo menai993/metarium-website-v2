@@ -2,17 +2,19 @@
 
 import { useState } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
+import Image from 'next/image';
 
 export default function Home() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   function RegistrationForm() {
     const [state, handleSubmit] = useForm('xgolvvao');
-    
+
     if (state.succeeded) {
       return (
         <div className="bg-green-50 p-8 rounded-xl border border-green-200">
           <h3 className="text-2xl font-bold text-green-900 mb-3">Thanks for reaching out!</h3>
-          <p className="text-green-800">We'll be in touch soon to discuss partnership opportunities and answer any questions you have.</p>
+          <p className="text-green-800">We&apos;ll be in touch soon to discuss partnership opportunities and answer any questions you have.</p>
         </div>
       );
     }
@@ -44,8 +46,8 @@ export default function Home() {
               className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#1f2f57] focus:border-transparent"
               required
             />
-            <ValidationError 
-              prefix="Email" 
+            <ValidationError
+              prefix="Email"
               field="email"
               errors={state.errors}
             />
@@ -87,8 +89,8 @@ export default function Home() {
               className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#1f2f57] focus:border-transparent"
               placeholder="Tell us about your interest in Metarium..."
             />
-            <ValidationError 
-              prefix="Message" 
+            <ValidationError
+              prefix="Message"
               field="message"
               errors={state.errors}
             />
@@ -119,595 +121,483 @@ export default function Home() {
     );
   }
 
+  const navLinks = [
+    { label: 'Product', href: '#product' },
+    { label: 'Solutions', href: '#solutions' },
+    { label: 'AI', href: '#ai' },
+    { label: 'Pricing', href: '#pricing' },
+    { label: 'Docs', href: '#docs' },
+    { label: 'Company', href: '#company' },
+  ];
+
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white text-gray-900">
       {/* Navigation */}
-      <nav className="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+      <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center">
-              <img src="/metarium_full_logo.png" alt="Metarium Logo" className="h-14" />
-            </div>
-            <div className="hidden md:flex space-x-8">
-              <a href="#platform" className="text-gray-700 hover:text-[#1f2f57] transition">Platform</a>
-              <a href="#features" className="text-gray-700 hover:text-[#1f2f57] transition">Features</a>
-              <a href="#partnerships" className="text-gray-700 hover:text-[#1f2f57] transition">Partnerships</a>
-              <a href="#register" className="text-gray-700 hover:text-[#1f2f57] transition">Get Started</a>
-            </div>
-            <div>
-              <a href="#register" className="bg-[#1f2f57] text-white px-6 py-2 rounded-lg hover:bg-[#172139] transition">
-                Try Free
+          <div className="flex items-center justify-between h-16">
+            <a href="#hero" className="flex-shrink-0">
+              <Image src="/metarium_full_logo.png" alt="Metarium" width={160} height={56} priority />
+            </a>
+
+            <div className="hidden md:flex items-center space-x-8">
+              {navLinks.map((l) => (
+                <a key={l.label} href={l.href} className="text-sm font-medium text-gray-700 hover:text-[#1f2f57] transition">
+                  {l.label}
+                </a>
+              ))}
+              <a
+                href="#demo"
+                className="bg-[#1f2f57] text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-[#172139] transition"
+              >
+                Request Demo
               </a>
             </div>
+
+            <button
+              className="md:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {mobileMenuOpen ? (
+                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+              ) : (
+                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" /></svg>
+              )}
+            </button>
           </div>
         </div>
+
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-white border-t border-gray-100 px-4 pb-4 space-y-2">
+            {navLinks.map((l) => (
+              <a key={l.label} href={l.href} onClick={() => setMobileMenuOpen(false)} className="block py-2 text-sm font-medium text-gray-700 hover:text-[#1f2f57]">
+                {l.label}
+              </a>
+            ))}
+            <a href="#demo" onClick={() => setMobileMenuOpen(false)} className="block w-full text-center bg-[#1f2f57] text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-[#172139] transition mt-2">
+              Request Demo
+            </a>
+          </div>
+        )}
       </nav>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-[#f0f4fc] to-white py-20">
+      <section id="hero" className="py-20 bg-gradient-to-b from-[#f0f4fc] to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-              The Intelligent Database
-              <span className="text-[#1f2f57]"> Operations Platform</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-[#1f2f57] font-semibold mb-4">
-              Stop reacting to database problems. Start predicting them.
-            </p>
-            <p className="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
-              Metarium is an enterprise-grade, AI-powered SQL Server intelligence platform that transforms raw database telemetry into actionable insights — automatically. It discovers, catalogs, monitors, and analyzes your entire SQL Server infrastructure, giving your team a single pane of glass for metadata management, performance intelligence, and compliance governance.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="#register" className="bg-[#1f2f57] text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-[#172139] transition shadow-lg">
-                Start Free Trial
-              </a>
-              <a href="#download" className="bg-white text-[#1f2f57] px-8 py-4 rounded-lg text-lg font-semibold border-2 border-[#1f2f57] hover:bg-[#f0f4fc] transition">
-                Download Now
-              </a>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#1f2f57] leading-tight">
+                The AI Control Center for Your Data Infrastructure
+              </h1>
+              <p className="mt-6 text-lg sm:text-xl text-gray-600 leading-relaxed">
+                Monitor, analyze, govern, and improve your databases with AI-powered intelligence across your entire data estate.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-4">
+                <a href="#demo" className="bg-[#1f2f57] text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-[#172139] transition shadow-lg">
+                  Request Demo
+                </a>
+                <a href="#" className="border-2 border-[#1f2f57] text-[#1f2f57] px-8 py-4 rounded-lg text-lg font-semibold hover:bg-[#f0f4fc] transition">
+                  Watch Overview
+                </a>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl shadow-2xl p-6 border border-gray-200">
+              <div className="flex items-center space-x-2 mb-4">
+                <div className="w-3 h-3 rounded-full bg-red-400" />
+                <div className="w-3 h-3 rounded-full bg-yellow-400" />
+                <div className="w-3 h-3 rounded-full bg-green-400" />
+                <span className="ml-2 text-xs text-gray-400">Metarium Dashboard</span>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  { label: 'Performance Score', value: '94%', color: 'bg-green-50 text-green-700 border-green-200' },
+                  { label: 'Risk Score', value: 'Low', color: 'bg-blue-50 text-blue-700 border-blue-200' },
+                  { label: 'Active Alerts', value: '3', color: 'bg-yellow-50 text-yellow-700 border-yellow-200' },
+                  { label: 'AI Insights', value: '12', color: 'bg-purple-50 text-purple-700 border-purple-200' },
+                ].map((m) => (
+                  <div key={m.label} className={`rounded-xl p-4 border ${m.color}`}>
+                    <p className="text-xs font-medium opacity-75">{m.label}</p>
+                    <p className="text-2xl font-bold mt-1">{m.value}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-4 h-24 bg-[#f0f4fc] rounded-lg flex items-end px-4 pb-2 space-x-1" aria-hidden="true">
+                {[40, 65, 45, 80, 60, 90, 70, 85, 75, 94].map((h, i) => (
+                  <div key={i} className="flex-1 bg-[#1f2f57] rounded-t opacity-70" style={{ height: `${h}%` }} />
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section id="features" className="py-20 bg-white">
+      {/* Social Proof */}
+      <section className="py-16 bg-white border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-sm font-semibold text-gray-500 uppercase tracking-wider">Trusted by data teams managing critical infrastructure</p>
+          <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
+            {Array.from({ length: 6 }).map((_, i) => (
+              <div key={i} className="h-14 rounded-lg bg-gray-100 flex items-center justify-center text-xs text-gray-400 font-medium">
+                Partner Logo
+              </div>
+            ))}
+          </div>
+          <p className="mt-8 text-sm text-gray-500">Join our early access program</p>
+        </div>
+      </section>
+
+      {/* Problem Section */}
+      <section id="problems" className="py-20 bg-[#f0f4fc]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Platform Capabilities
-            </h2>
-            <p className="text-xl text-gray-600">
-              Everything you need to monitor, analyze, predict, and optimize your database infrastructure
-            </p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-center text-[#1f2f57]">Modern Data Infrastructure Is Hard to Control</h2>
+          <div className="mt-12 grid sm:grid-cols-2 gap-8">
+            {[
+              { title: 'Fragmented Visibility', desc: 'Metrics in one tool, catalog in another, performance somewhere else.', icon: 'M15 12a3 3 0 11-6 0 3 3 0 016 0z M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z' },
+              { title: 'Hidden Data Risks', desc: 'Unused objects, schema drift, silent data quality issues.', icon: 'M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z' },
+              { title: 'Slow Incident Investigation', desc: 'Hours to diagnose with no AI assistance.', icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z' },
+              { title: 'Growing Complexity', desc: 'Hundreds of databases, thousands of objects, unknown dependencies.', icon: 'M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z' },
+            ].map((p) => (
+              <div key={p.title} className="bg-white rounded-xl p-8 shadow-sm border border-gray-200 hover:shadow-md transition">
+                <svg className="h-8 w-8 text-[#1f2f57] mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={p.icon} /></svg>
+                <h3 className="text-xl font-bold text-[#1f2f57]">{p.title}</h3>
+                <p className="mt-2 text-gray-600">{p.desc}</p>
+              </div>
+            ))}
           </div>
-
-          <div id="platform" className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Monitoring & Observability */}
-            <div className="bg-[#f0f4fc] p-8 rounded-xl hover:shadow-xl transition">
-              <div className="w-12 h-12 bg-[#1f2f57] rounded-lg flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Monitoring &amp; Observability</h3>
-              <ul className="text-gray-600 space-y-1 text-sm list-disc list-inside">
-                <li>Server Metrics</li>
-                <li>Instance Metrics</li>
-                <li>Database Health Scoring</li>
-                <li>SQL Agent Monitoring</li>
-              </ul>
-            </div>
-
-            {/* Metadata Intelligence */}
-            <div className="bg-[#f0f4fc] p-8 rounded-xl hover:shadow-xl transition">
-              <div className="w-12 h-12 bg-[#1f2f57] rounded-lg flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Metadata Intelligence</h3>
-              <ul className="text-gray-600 space-y-1 text-sm list-disc list-inside">
-                <li>30 Metadata Collectors</li>
-                <li>Change History</li>
-                <li>Object Catalog</li>
-                <li>Definition Snapshots</li>
-              </ul>
-            </div>
-
-            {/* Query Performance Intelligence */}
-            <div className="bg-[#f0f4fc] p-8 rounded-xl hover:shadow-xl transition">
-              <div className="w-12 h-12 bg-[#1f2f57] rounded-lg flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Query Performance Intelligence</h3>
-              <ul className="text-gray-600 space-y-1 text-sm list-disc list-inside">
-                <li>Heavy Query Detection</li>
-                <li>Regression Analysis</li>
-                <li>Execution Plan Tracking</li>
-                <li>Missing Index Recommendations</li>
-              </ul>
-            </div>
-
-            {/* Database Hygiene */}
-            <div className="bg-[#f0f4fc] p-8 rounded-xl hover:shadow-xl transition">
-              <div className="w-12 h-12 bg-[#1f2f57] rounded-lg flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Database Hygiene</h3>
-              <ul className="text-gray-600 space-y-1 text-sm list-disc list-inside">
-                <li>Dead Object Detection</li>
-                <li>Execution Frequency Tracking</li>
-                <li>Object Popularity Scoring</li>
-              </ul>
-            </div>
-
-            {/* AI-Powered Analysis */}
-            <div className="bg-[#f0f4fc] p-8 rounded-xl hover:shadow-xl transition">
-              <div className="w-12 h-12 bg-[#1f2f57] rounded-lg flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">AI-Powered Analysis</h3>
-              <ul className="text-gray-600 space-y-1 text-sm list-disc list-inside">
-                <li>Multi-Provider LLM Support</li>
-                <li>6-Stage Analysis Pipeline</li>
-                <li>Interactive AI Chat</li>
-                <li>AI-Generated Explanations</li>
-                <li>LLM Optimization Advisor</li>
-              </ul>
-            </div>
-
-            {/* AI Safety & Governance */}
-            <div className="bg-[#f0f4fc] p-8 rounded-xl hover:shadow-xl transition">
-              <div className="w-12 h-12 bg-[#1f2f57] rounded-lg flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">AI Safety &amp; Governance</h3>
-              <ul className="text-gray-600 space-y-1 text-sm list-disc list-inside">
-                <li>5-Layer Safety System</li>
-                <li>Data Masking</li>
-                <li>Tenant Isolation</li>
-                <li>Explainable AI</li>
-              </ul>
-            </div>
-
-            {/* Dependency & Impact Analysis */}
-            <div className="bg-[#f0f4fc] p-8 rounded-xl hover:shadow-xl transition">
-              <div className="w-12 h-12 bg-[#1f2f57] rounded-lg flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Dependency &amp; Impact Analysis</h3>
-              <ul className="text-gray-600 space-y-1 text-sm list-disc list-inside">
-                <li>Visual Dependency Graph</li>
-                <li>Cross-Database Dependencies</li>
-                <li>Change Impact Preview</li>
-              </ul>
-            </div>
-
-            {/* Enterprise Administration */}
-            <div className="bg-[#f0f4fc] p-8 rounded-xl hover:shadow-xl transition">
-              <div className="w-12 h-12 bg-[#1f2f57] rounded-lg flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Enterprise Administration</h3>
-              <ul className="text-gray-600 space-y-1 text-sm list-disc list-inside">
-                <li>RBAC</li>
-                <li>Multi-Node HA</li>
-                <li>Object Ownership</li>
-                <li>Tagging &amp; Classification</li>
-                <li>Notification Subscriptions</li>
-                <li>License Management</li>
-              </ul>
-            </div>
-          </div>
+          <p className="mt-12 text-center text-lg font-medium text-[#1f2f57]">Metarium unifies everything into a single intelligence platform.</p>
         </div>
       </section>
 
-      {/* Problems We Solve Section */}
-      <section className="py-20 bg-gray-50">
+      {/* Product Overview - Five Pillars */}
+      <section id="product" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              The Problems We Solve
-            </h2>
-            <p className="text-xl text-gray-600">
-              Whether you manage 1 database or 1,000, Metarium replaces guesswork with data-driven decisions
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition">
-              <h3 className="text-lg font-bold text-gray-900 mb-3">{'"'}We Don{"'"}t Know What Changed — Or When{'"'}</h3>
-              <p className="text-gray-600 text-sm">
-                Schema changes slip through unnoticed. Metarium tracks every change automatically with 30 specialized metadata collectors, full before-and-after diffs, timestamps, and audit trails.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition">
-              <h3 className="text-lg font-bold text-gray-900 mb-3">{'"'}We Only Discover Slowdowns After Users Complain{'"'}</h3>
-              <p className="text-gray-600 text-sm">
-                Traditional monitoring tells you something is slow. Metarium tells you why — and warns you before it becomes a crisis with our 6-stage heavy query analysis pipeline.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition">
-              <h3 className="text-lg font-bold text-gray-900 mb-3">{'"'}We Have Indexes and Tables Nobody Uses{'"'}</h3>
-              <p className="text-gray-600 text-sm">
-                Metarium{"'"}s Dead Object Detection engine identifies unused tables, indexes, and columns with confidence-scored classifications.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition">
-              <h3 className="text-lg font-bold text-gray-900 mb-3">{'"'}We Deployed a Change and It Broke Something{'"'}</h3>
-              <p className="text-gray-600 text-sm">
-                Metarium{"'"}s Impact Analyzer maps every object dependency — including cross-database dependencies — and calculates the risk of any proposed change.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition">
-              <h3 className="text-lg font-bold text-gray-900 mb-3">{'"'}We Can{"'"}t Prove Where Sensitive Data Lives{'"'}</h3>
-              <p className="text-gray-600 text-sm">
-                Metarium automatically detects and classifies sensitive data (SSN, credit cards, emails, phone numbers, account numbers). All sensitive data is masked in AI interactions with full audit logging.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition">
-              <h3 className="text-lg font-bold text-gray-900 mb-3">{'"'}Our DBAs Spend Hours Correlating Metrics{'"'}</h3>
-              <p className="text-gray-600 text-sm">
-                Metarium automates the entire investigation pipeline with AI-powered analysis, freeing your DBAs to focus on strategic work.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition md:col-span-2 lg:col-span-1">
-              <h3 className="text-lg font-bold text-gray-900 mb-3">{'"'}We Have Zero Visibility Across Databases{'"'}</h3>
-              <p className="text-gray-600 text-sm">
-                Metarium{"'"}s Dependency Graph and Cross-Database Dependency Tracker map every relationship visually, giving you full cross-database visibility.
-              </p>
-            </div>
+          <h2 className="text-3xl sm:text-4xl font-bold text-center text-[#1f2f57]">One Platform. Five Pillars of Intelligence.</h2>
+          <div className="mt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                title: 'Discover Your Data Estate',
+                icon: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z',
+                features: ['Server inventory', 'Database catalog', 'Object catalog', 'Schema browser', 'Change history', 'Tagging', 'Backup visibility'],
+                message: 'Understand every database object, dependency, and change across your infrastructure.',
+              },
+              {
+                title: 'Monitor Live Database Health',
+                icon: 'M13 10V3L4 14h7v7l9-11h-7z',
+                features: ['Live sessions', 'Deadlocks', 'Server metrics', 'Storage monitoring', 'Backups', 'Replication'],
+                message: 'Real-time visibility into database performance and system health.',
+              },
+              {
+                title: 'Analyze Performance and Risk',
+                icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z',
+                features: ['Heavy queries', 'Wait statistics', 'Plan cache', 'Anomaly detection', 'Dead objects', 'Index health', 'Impact analysis'],
+                message: 'Find performance bottlenecks and hidden risks before they become incidents.',
+              },
+              {
+                title: 'Ensure Data Quality',
+                icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
+                features: ['Rule engine', 'Violations', 'Freshness', 'Profiling', 'Schema comparison', 'Table criticality'],
+                message: 'Guarantee reliable and trustworthy data pipelines.',
+              },
+              {
+                title: 'Govern and Secure Your Data',
+                icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z',
+                features: ['Access controls', 'SQL security', 'Permissions', 'Classification', 'Compliance'],
+                message: 'Maintain security and compliance across your entire data environment.',
+              },
+            ].map((pillar) => (
+              <div key={pillar.title} className="bg-[#f0f4fc] rounded-xl p-8 border border-gray-200 hover:shadow-lg transition flex flex-col">
+                <svg className="h-8 w-8 text-[#1f2f57] mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={pillar.icon} /></svg>
+                <h3 className="text-xl font-bold text-[#1f2f57] mb-4">{pillar.title}</h3>
+                <ul className="space-y-1 mb-6 flex-1">
+                  {pillar.features.map((f) => (
+                    <li key={f} className="flex items-center text-sm text-gray-700">
+                      <svg className="h-4 w-4 text-[#1f2f57] mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <p className="text-sm text-gray-600 italic border-t border-gray-200 pt-4">{pillar.message}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Predictive Intelligence Section */}
-      <section className="py-20 bg-white">
+      {/* AI Intelligence Section */}
+      <section id="ai" className="py-20 bg-[#1f2f57]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Predictive Intelligence
-            </h2>
-            <p className="text-xl text-gray-600">
-              What Metarium predicts — before your users even notice a problem
-            </p>
+          <div className="text-center mb-14">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white">AI That Understands Your Data Infrastructure</h2>
+            <p className="mt-4 text-lg text-blue-200">Built-in AI intelligence that goes beyond simple monitoring</p>
           </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="bg-[#f0f4fc] p-8 rounded-xl text-center hover:shadow-xl transition">
-              <div className="w-12 h-12 bg-[#1f2f57] rounded-lg flex items-center justify-center mb-4 mx-auto">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-3">Performance</h3>
-              <ul className="text-gray-600 text-sm space-y-1">
-                <li>Query Regression</li>
-                <li>Server Anomaly</li>
-                <li>Connection Spike</li>
-                <li>Deadlock Risk</li>
-              </ul>
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            <div className="space-y-4">
+              {[
+                'AI incident investigation',
+                'AI query optimization',
+                'AI object explanations',
+                'AI data classification',
+                'AI rule generation',
+                'AI chat assistant',
+                'AI dependency analysis',
+              ].map((f) => (
+                <div key={f} className="flex items-center space-x-3">
+                  <svg className="h-6 w-6 text-green-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                  <span className="text-white text-lg">{f}</span>
+                </div>
+              ))}
             </div>
 
-            <div className="bg-[#f0f4fc] p-8 rounded-xl text-center hover:shadow-xl transition">
-              <div className="w-12 h-12 bg-[#1f2f57] rounded-lg flex items-center justify-center mb-4 mx-auto">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                </svg>
+            <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+              <div className="bg-[#172139] px-6 py-4 flex items-center space-x-2">
+                <svg className="h-5 w-5 text-blue-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" /></svg>
+                <span className="text-white font-semibold text-sm">Ask Metarium</span>
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-3">Health</h3>
-              <ul className="text-gray-600 text-sm space-y-1">
-                <li>Stale Statistics</li>
-                <li>Index Fragmentation</li>
-                <li>Table Growth</li>
-              </ul>
-            </div>
-
-            <div className="bg-[#f0f4fc] p-8 rounded-xl text-center hover:shadow-xl transition">
-              <div className="w-12 h-12 bg-[#1f2f57] rounded-lg flex items-center justify-center mb-4 mx-auto">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
-                </svg>
+              <div className="p-6 space-y-4">
+                <div className="flex justify-end">
+                  <div className="bg-[#f0f4fc] rounded-xl rounded-tr-none px-4 py-3 max-w-xs">
+                    <p className="text-sm text-gray-800">Why did CPU spike on server X yesterday?</p>
+                  </div>
+                </div>
+                <div className="flex justify-start">
+                  <div className="bg-gray-50 rounded-xl rounded-tl-none px-4 py-3 max-w-sm border border-gray-200">
+                    <p className="text-xs font-semibold text-[#1f2f57] mb-2">Metarium AI found 4 findings:</p>
+                    <ul className="space-y-2">
+                      {[
+                        'Heavy query detected on db_analytics',
+                        'Wait statistics show CXPACKET waits increased 340%',
+                        'Plan regression identified on query #4521',
+                        'Anomaly correlation: 87% confidence',
+                      ].map((line) => (
+                        <li key={line} className="flex items-start text-xs text-gray-700">
+                          <svg className="h-3.5 w-3.5 text-[#1f2f57] mr-1.5 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                          {line}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-3">Optimization</h3>
-              <ul className="text-gray-600 text-sm space-y-1">
-                <li>Missing Indexes</li>
-                <li>Dead Object Candidates</li>
-                <li>Parameter Sniffing</li>
-              </ul>
-            </div>
-
-            <div className="bg-[#f0f4fc] p-8 rounded-xl text-center hover:shadow-xl transition">
-              <div className="w-12 h-12 bg-[#1f2f57] rounded-lg flex items-center justify-center mb-4 mx-auto">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4.5c-.77-.833-2.694-.833-3.464 0L3.34 16.5c-.77.833.192 2.5 1.732 2.5z" />
-                </svg>
-              </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-3">Risk</h3>
-              <ul className="text-gray-600 text-sm space-y-1">
-                <li>Change Impact</li>
-                <li>Compliance Exposure</li>
-                <li>Configuration Drift</li>
-              </ul>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Early Access & Partnerships Section */}
-      <section id="partnerships" className="py-20 bg-white">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Early Access & Partnerships</h2>
-            <p className="text-lg text-gray-600 mb-6">
-              Metarium is currently in active development and evolving rapidly based on real-world needs and feedback.
-            </p>
-          </div>
-
-          <div className="bg-[#f0f4fc] p-8 rounded-xl border border-[#1f2f57]/20">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">We are opening early conversations with partners, teams, and organizations who want to:</h3>
-            <ul className="space-y-4 mb-8">
-              <li className="flex items-start">
-                <svg className="w-6 h-6 text-[#1f2f57] mr-3 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
-                <span className="text-lg text-gray-700">Influence the product direction</span>
-              </li>
-              <li className="flex items-start">
-                <svg className="w-6 h-6 text-[#1f2f57] mr-3 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
-                <span className="text-lg text-gray-700">Collaborate on use cases</span>
-              </li>
-              <li className="flex items-start">
-                <svg className="w-6 h-6 text-[#1f2f57] mr-3 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
-                <span className="text-lg text-gray-700">Gain early access to upcoming capabilities</span>
-              </li>
-            </ul>
-            <p className="text-lg text-gray-700 mb-8">
-              If you're interested in shaping Metarium together and exploring a long-term partnership, we'd love to talk.
-            </p>
-            <div className="text-center">
-              <a href="#register" className="inline-block bg-[#1f2f57] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#172139] transition">
-                Get in touch to explore partnership opportunities
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing Section */}
-      <section id="pricing" className="py-20 bg-gray-50">
+      {/* Incident Investigation */}
+      <section id="investigate" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Ready to Get Started?</h2>
-            <p className="text-xl text-gray-600 mb-8">
-              Contact us today to discuss your needs and get a custom quote tailored to your organization.
-            </p>
-            <a href="#register" className="inline-block bg-[#1f2f57] text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-[#172139] transition shadow-lg">
-              Contact Me
-            </a>
+          <h2 className="text-3xl sm:text-4xl font-bold text-center text-[#1f2f57]">Investigate Database Incidents in Minutes, Not Hours</h2>
+          <div className="mt-14 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-0">
+            {[
+              { label: 'Anomaly Detected', icon: 'M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9' },
+              { label: 'Click Investigate', icon: 'M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122' },
+              { label: 'AI Analyzes Metrics', icon: 'M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z' },
+              { label: 'Root Cause Found', icon: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z' },
+            ].map((step, i) => (
+              <div key={step.label} className="flex items-center">
+                <div className="flex flex-col items-center text-center w-40">
+                  <div className="w-16 h-16 rounded-full bg-[#f0f4fc] flex items-center justify-center border-2 border-[#1f2f57]">
+                    <svg className="h-7 w-7 text-[#1f2f57]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={step.icon} /></svg>
+                  </div>
+                  <p className="mt-3 text-sm font-semibold text-[#1f2f57]">{step.label}</p>
+                </div>
+                {i < 3 && (
+                  <svg className="hidden md:block h-6 w-6 text-[#1f2f57] mx-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                )}
+              </div>
+            ))}
+          </div>
+          <div className="mt-12 max-w-lg mx-auto bg-[#f0f4fc] rounded-xl p-6 border border-gray-200 text-center">
+            <p className="text-lg font-bold text-[#1f2f57]">Root cause: Query regression after index drop</p>
+            <div className="mt-4 flex justify-center gap-8 text-sm text-gray-700">
+              <span><strong>Confidence:</strong> 87%</span>
+              <span><strong>Impact:</strong> 3 databases affected</span>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Why Choose Metarium Section */}
-      <section className="py-20 bg-white">
+      {/* Platform Integrations */}
+      <section id="integrations" className="py-20 bg-[#f0f4fc]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Why Choose Metarium
-            </h2>
-            <p className="text-xl text-gray-600">
-              Traditional Monitoring vs Metarium
-            </p>
-          </div>
-
-          <div className="overflow-x-auto">
-            <table className="w-full max-w-4xl mx-auto border-collapse">
-              <thead>
-                <tr>
-                  <th className="py-4 px-6 bg-gray-100 text-left text-gray-900 font-bold rounded-tl-xl">Capability</th>
-                  <th className="py-4 px-6 bg-gray-100 text-center text-gray-500 font-bold">Traditional Monitoring</th>
-                  <th className="py-4 px-6 bg-[#1f2f57] text-center text-white font-bold rounded-tr-xl">Metarium</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-200">
-                <tr>
-                  <td className="py-4 px-6 text-gray-700">Approach</td>
-                  <td className="py-4 px-6 text-center text-gray-500">Reports metrics</td>
-                  <td className="py-4 px-6 text-center text-[#1f2f57] font-semibold">Delivers intelligence</td>
-                </tr>
-                <tr>
-                  <td className="py-4 px-6 text-gray-700">Timing</td>
-                  <td className="py-4 px-6 text-center text-gray-500">Reacts after the fact</td>
-                  <td className="py-4 px-6 text-center text-[#1f2f57] font-semibold">Predicts before impact</td>
-                </tr>
-                <tr>
-                  <td className="py-4 px-6 text-gray-700">Root Cause</td>
-                  <td className="py-4 px-6 text-center text-gray-500">Requires manual correlation</td>
-                  <td className="py-4 px-6 text-center text-[#1f2f57] font-semibold">Automated root cause analysis</td>
-                </tr>
-                <tr>
-                  <td className="py-4 px-6 text-gray-700">Scope</td>
-                  <td className="py-4 px-6 text-center text-gray-500">Single-database view</td>
-                  <td className="py-4 px-6 text-center text-[#1f2f57] font-semibold">Cross-database dependency mapping</td>
-                </tr>
-                <tr>
-                  <td className="py-4 px-6 text-gray-700">AI</td>
-                  <td className="py-4 px-6 text-center text-gray-500">No AI</td>
-                  <td className="py-4 px-6 text-center text-[#1f2f57] font-semibold">Multi-provider LLM integration</td>
-                </tr>
-                <tr>
-                  <td className="py-4 px-6 text-gray-700">Change Tracking</td>
-                  <td className="py-4 px-6 text-center text-gray-500">Basic change logs</td>
-                  <td className="py-4 px-6 text-center text-[#1f2f57] font-semibold">30 metadata collectors with full diff history</td>
-                </tr>
-                <tr>
-                  <td className="py-4 px-6 text-gray-700">Compliance</td>
-                  <td className="py-4 px-6 text-center text-gray-500">No compliance</td>
-                  <td className="py-4 px-6 text-center text-[#1f2f57] font-semibold">Automatic PII detection and masking</td>
-                </tr>
-              </tbody>
-            </table>
+          <h2 className="text-3xl sm:text-4xl font-bold text-center text-[#1f2f57]">Connects to Your Data Stack</h2>
+          <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { name: 'SQL Server', desc: 'Full monitoring and analysis', icon: 'M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4' },
+              { name: 'PostgreSQL', desc: 'Full monitoring and analysis', icon: 'M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4' },
+              { name: 'Cloud Databases', desc: 'Coming Soon', icon: 'M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z' },
+              { name: 'Alerts & Notifications', desc: 'Email, Slack, Teams', icon: 'M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9' },
+              { name: 'REST APIs', desc: 'Full API access', icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4' },
+              { name: 'Data Export', desc: 'CSV, JSON, PDF', icon: 'M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z' },
+            ].map((intg) => (
+              <div key={intg.name} className="bg-white rounded-xl p-6 text-center border border-gray-200 hover:shadow-md transition">
+                <svg className="h-10 w-10 mx-auto text-[#1f2f57]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={intg.icon} /></svg>
+                <h3 className="mt-4 font-bold text-[#1f2f57]">{intg.name}</h3>
+                <p className="mt-1 text-sm text-gray-500">{intg.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Deployment Options Section */}
-      <section className="py-20 bg-gray-50">
+      {/* Use Cases */}
+      <section id="solutions" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Deployment Options
-            </h2>
-            <p className="text-xl text-gray-600">
-              Deploy Metarium wherever your infrastructure lives
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-6 max-w-4xl mx-auto">
-            <div className="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-xl transition">
-              <div className="w-12 h-12 bg-[#1f2f57] rounded-lg flex items-center justify-center mb-3 mx-auto">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2" />
-                </svg>
+          <h2 className="text-3xl sm:text-4xl font-bold text-center text-[#1f2f57]">Built for Modern Data Teams</h2>
+          <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              { role: 'DBAs', points: ['Performance optimization', 'Server health monitoring'], icon: 'M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z' },
+              { role: 'Data Engineers', points: ['Pipeline reliability', 'Data quality rules'], icon: 'M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z' },
+              { role: 'Analytics Teams', points: ['Data catalog', 'Usage insights'], icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z' },
+              { role: 'Platform Teams', points: ['Governance', 'Compliance'], icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z' },
+            ].map((uc) => (
+              <div key={uc.role} className="bg-[#f0f4fc] rounded-xl p-6 border border-gray-200 text-center hover:shadow-md transition">
+                <svg className="h-10 w-10 mx-auto text-[#1f2f57]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={uc.icon} /></svg>
+                <h3 className="mt-4 text-lg font-bold text-[#1f2f57]">{uc.role}</h3>
+                <ul className="mt-3 space-y-1">
+                  {uc.points.map((p) => (
+                    <li key={p} className="text-sm text-gray-600">{p}</li>
+                  ))}
+                </ul>
               </div>
-              <h3 className="font-bold text-gray-900">On-Premises</h3>
-            </div>
-
-            <div className="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-xl transition">
-              <div className="w-12 h-12 bg-[#1f2f57] rounded-lg flex items-center justify-center mb-3 mx-auto">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
-                </svg>
-              </div>
-              <h3 className="font-bold text-gray-900">Cloud</h3>
-            </div>
-
-            <div className="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-xl transition">
-              <div className="w-12 h-12 bg-[#1f2f57] rounded-lg flex items-center justify-center mb-3 mx-auto">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
-                </svg>
-              </div>
-              <h3 className="font-bold text-gray-900">Hybrid</h3>
-            </div>
-
-            <div className="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-xl transition">
-              <div className="w-12 h-12 bg-[#1f2f57] rounded-lg flex items-center justify-center mb-3 mx-auto">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-                </svg>
-              </div>
-              <h3 className="font-bold text-gray-900">Containerized</h3>
-            </div>
-
-            <div className="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-xl transition col-span-2 md:col-span-1">
-              <div className="w-12 h-12 bg-[#1f2f57] rounded-lg flex items-center justify-center mb-3 mx-auto">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                </svg>
-              </div>
-              <h3 className="font-bold text-gray-900">HA Cluster</h3>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Registration Section */}
-      <section id="register" className="py-20 bg-white">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Get Started Today</h2>
-            <p className="text-xl text-gray-600 mb-4">
-              Start your 30-day free trial and experience the power of Metarium
-            </p>
-            <div className="text-gray-500 max-w-2xl mx-auto text-left">
-              <p className="mb-3">Within minutes, Metarium begins its 5-step onboarding:</p>
-              <ol className="list-decimal list-inside space-y-1">
-                <li><strong>Discovering</strong> — Cataloging every object across your databases</li>
-                <li><strong>Monitoring</strong> — Capturing performance metrics and query statistics</li>
-                <li><strong>Analyzing</strong> — Detecting anomalies, regressions, and optimization opportunities</li>
-                <li><strong>Predicting</strong> — Forecasting issues before they impact your users</li>
-                <li><strong>Recommending</strong> — AI-powered suggestions with explainable reasoning</li>
-              </ol>
-            </div>
+      {/* Platform Architecture */}
+      <section id="architecture" className="py-20 bg-[#f0f4fc]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center text-[#1f2f57]">Enterprise-Grade Architecture</h2>
+          <div className="mt-14 flex flex-col md:flex-row items-center justify-center gap-4">
+            {[
+              { label: 'Your Databases', color: 'bg-blue-100 border-blue-300 text-blue-800' },
+              { label: 'Metarium Worker', color: 'bg-indigo-100 border-indigo-300 text-indigo-800' },
+              { label: 'Data Collection Layer', color: 'bg-purple-100 border-purple-300 text-purple-800' },
+              { label: 'AI Engine', color: 'bg-[#1f2f57] border-[#172139] text-white' },
+              { label: 'Dashboard UI + APIs', color: 'bg-green-100 border-green-300 text-green-800' },
+            ].map((node, i) => (
+              <div key={node.label} className="flex items-center">
+                <div className={`rounded-xl px-6 py-4 border-2 font-semibold text-sm text-center ${node.color}`}>
+                  {node.label}
+                </div>
+                {i < 4 && (
+                  <svg className="hidden md:block h-6 w-6 text-[#1f2f57] mx-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                )}
+              </div>
+            ))}
           </div>
+        </div>
+      </section>
 
-          <RegistrationForm />
+      {/* Security & Compliance */}
+      <section id="security" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center text-[#1f2f57]">Enterprise Security You Can Trust</h2>
+          <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              { title: 'Role-Based Access', desc: 'Granular permissions for every team member.', icon: 'M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z' },
+              { title: 'Audit Logs', desc: 'Complete trail of every action and access event.', icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2' },
+              { title: 'Encryption', desc: 'Data encrypted at rest and in transit.', icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z' },
+              { title: 'Data Classification', desc: 'Automatic PII and sensitive data detection.', icon: 'M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z' },
+            ].map((s) => (
+              <div key={s.title} className="bg-[#f0f4fc] rounded-xl p-6 border border-gray-200 text-center hover:shadow-md transition">
+                <svg className="h-10 w-10 mx-auto text-[#1f2f57]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={s.icon} /></svg>
+                <h3 className="mt-4 font-bold text-[#1f2f57]">{s.title}</h3>
+                <p className="mt-2 text-sm text-gray-600">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-          <div className="mt-8 text-center text-gray-600">
-            <p>Already have an account? <a href="#" className="text-[#1f2f57] hover:underline">Sign in</a></p>
+      {/* ROI Section */}
+      <section className="py-20 bg-[#1f2f57]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white">Reduce Database Incidents by 70%</h2>
+          <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              { stat: '10x Faster', desc: 'Root cause analysis' },
+              { stat: '70% Fewer', desc: 'Database incidents' },
+              { stat: '3x Better', desc: 'Data reliability' },
+              { stat: '50% Less', desc: 'Operational overhead' },
+            ].map((r) => (
+              <div key={r.stat} className="bg-white/10 rounded-xl p-8 backdrop-blur">
+                <p className="text-4xl font-extrabold text-white">{r.stat}</p>
+                <p className="mt-2 text-blue-200">{r.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Demo / Registration */}
+      <section id="demo" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl mx-auto text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#1f2f57]">See Metarium in Action</h2>
+            <p className="mt-4 text-lg text-gray-600">Experience the AI Control Center for your data infrastructure</p>
+          </div>
+          <div className="max-w-xl mx-auto">
+            <RegistrationForm />
+            <p className="mt-6 text-center text-sm text-gray-500">
+              Already have an account?{' '}
+              <a href="#" className="text-[#1f2f57] font-semibold hover:underline">Sign in</a>
+            </p>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
+      <footer className="bg-[#1f2f57] text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <h3 className="text-xl font-bold mb-4">Metarium</h3>
-              <p className="text-gray-400">
-                Metarium — Intelligent Database Operations. Monitor. Analyze. Predict. Optimize.
-              </p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8">
+            <div className="lg:col-span-1">
+              <Image src="/metarium_full_logo.png" alt="Metarium" width={140} height={40} className="brightness-0 invert" />
+              <p className="mt-4 text-sm text-blue-200">The AI Control Center for your data infrastructure.</p>
             </div>
 
             <div>
-              <h4 className="font-semibold mb-4">Product</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#features" className="hover:text-white transition">Features</a></li>
-                <li><a href="#pricing" className="hover:text-white transition">Pricing</a></li>
-                <li><a href="#download" className="hover:text-white transition">Download</a></li>
-                <li><a href="#" className="hover:text-white transition">Documentation</a></li>
+              <h4 className="font-semibold text-sm uppercase tracking-wider text-blue-300">Product</h4>
+              <ul className="mt-4 space-y-2 text-sm text-blue-100">
+                {['Overview', 'Monitoring', 'Performance', 'Data Quality', 'AI Intelligence'].map((l) => (
+                  <li key={l}><a href="#" className="hover:text-white transition">{l}</a></li>
+                ))}
               </ul>
             </div>
 
             <div>
-              <h4 className="font-semibold mb-4">Company</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white transition">About Us</a></li>
-                <li><a href="#" className="hover:text-white transition">Careers</a></li>
-                <li><a href="#" className="hover:text-white transition">Blog</a></li>
-                <li><a href="#" className="hover:text-white transition">Contact</a></li>
+              <h4 className="font-semibold text-sm uppercase tracking-wider text-blue-300">Solutions</h4>
+              <ul className="mt-4 space-y-2 text-sm text-blue-100">
+                {['DBAs', 'Data Engineers', 'Analytics', 'Platform Teams'].map((l) => (
+                  <li key={l}><a href="#" className="hover:text-white transition">{l}</a></li>
+                ))}
               </ul>
             </div>
 
             <div>
-              <h4 className="font-semibold mb-4">Legal</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white transition">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-white transition">Terms of Service</a></li>
-                <li><a href="#" className="hover:text-white transition">Security</a></li>
-                <li><a href="#" className="hover:text-white transition">Compliance</a></li>
+              <h4 className="font-semibold text-sm uppercase tracking-wider text-blue-300">Company</h4>
+              <ul className="mt-4 space-y-2 text-sm text-blue-100">
+                {['About', 'Blog', 'Careers', 'Contact'].map((l) => (
+                  <li key={l}><a href="#" className="hover:text-white transition">{l}</a></li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-semibold text-sm uppercase tracking-wider text-blue-300">Legal</h4>
+              <ul className="mt-4 space-y-2 text-sm text-blue-100">
+                {['Privacy', 'Terms', 'Security', 'Compliance'].map((l) => (
+                  <li key={l}><a href="#" className="hover:text-white transition">{l}</a></li>
+                ))}
               </ul>
             </div>
           </div>
 
-          <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-            <p>&copy; 2026 Metarium. All rights reserved.</p>
+          <div className="mt-12 pt-8 border-t border-white/20 text-center text-sm text-blue-200">
+            &copy; 2026 Metarium. All rights reserved.
           </div>
         </div>
       </footer>
