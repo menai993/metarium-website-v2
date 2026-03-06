@@ -137,7 +137,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <a href="#hero" className="flex-shrink-0">
-              <Image src="/metarium_full_logo.png" alt="Metarium" width={160} height={56} className="h-14 w-auto" />
+              <Image src="/metarium_full_logo.png" alt="Metarium" width={160} height={56} priority />
             </a>
 
             <div className="hidden md:flex items-center space-x-8">
@@ -555,7 +555,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8">
             <div className="lg:col-span-1">
-              <Image src="/metarium_full_logo.png" alt="Metarium" width={140} height={48} className="h-10 w-auto brightness-0 invert" />
+              <Image src="/metarium_full_logo.png" alt="Metarium" width={140} height={40} className="brightness-0 invert" />
               <p className="mt-4 text-sm text-blue-200">The AI Control Center for your data infrastructure.</p>
             </div>
 
