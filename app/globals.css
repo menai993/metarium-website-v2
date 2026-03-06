@@ -18,20 +18,3 @@
     -moz-osx-font-smoothing: grayscale;
   }
 }
-
-/* ─── Hero Animation ─── */
-
-/* Subtle dot-grid parallax background */
-.hero-bg-grid {
-  background-image: radial-gradient(circle, rgba(31, 47, 87, 0.06) 1px, transparent 1px);
-  background-size: 32px 32px;
-}
-
-/* Feature-card hover lift */
-.feature-card {
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-.feature-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(31, 47, 87, 0.12);
-}

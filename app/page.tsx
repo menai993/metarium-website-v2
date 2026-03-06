@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 import Image from 'next/image';
-import HeroAnimation from './components/HeroAnimation';
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -183,8 +182,56 @@ export default function Home() {
         )}
       </nav>
 
-      {/* Hero Section – Scroll-driven GSAP animation */}
-      <HeroAnimation />
+      {/* Hero Section */}
+      <section id="hero" className="py-20 bg-gradient-to-b from-[#f0f4fc] to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#1f2f57] leading-tight">
+                The AI Control Center for Your Data Infrastructure
+              </h1>
+              <p className="mt-6 text-lg sm:text-xl text-gray-600 leading-relaxed">
+                Monitor, analyze, govern, and improve your databases with AI-powered intelligence across your entire data estate.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-4">
+                <a href="#demo" className="bg-[#1f2f57] text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-[#172139] transition shadow-lg">
+                  Request Demo
+                </a>
+                <a href="#" className="border-2 border-[#1f2f57] text-[#1f2f57] px-8 py-4 rounded-lg text-lg font-semibold hover:bg-[#f0f4fc] transition">
+                  Watch Overview
+                </a>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl shadow-2xl p-6 border border-gray-200">
+              <div className="flex items-center space-x-2 mb-4">
+                <div className="w-3 h-3 rounded-full bg-red-400" />
+                <div className="w-3 h-3 rounded-full bg-yellow-400" />
+                <div className="w-3 h-3 rounded-full bg-green-400" />
+                <span className="ml-2 text-xs text-gray-400">Metarium Dashboard</span>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  { label: 'Performance Score', value: '94%', color: 'bg-green-50 text-green-700 border-green-200' },
+                  { label: 'Risk Score', value: 'Low', color: 'bg-blue-50 text-blue-700 border-blue-200' },
+                  { label: 'Active Alerts', value: '3', color: 'bg-yellow-50 text-yellow-700 border-yellow-200' },
+                  { label: 'AI Insights', value: '12', color: 'bg-purple-50 text-purple-700 border-purple-200' },
+                ].map((m) => (
+                  <div key={m.label} className={`rounded-xl p-4 border ${m.color}`}>
+                    <p className="text-xs font-medium opacity-75">{m.label}</p>
+                    <p className="text-2xl font-bold mt-1">{m.value}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-4 h-24 bg-[#f0f4fc] rounded-lg flex items-end px-4 pb-2 space-x-1" aria-hidden="true">
+                {[40, 65, 45, 80, 60, 90, 70, 85, 75, 94].map((h, i) => (
+                  <div key={i} className="flex-1 bg-[#1f2f57] rounded-t opacity-70" style={{ height: `${h}%` }} />
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Social Proof */}
       <section className="py-16 bg-white border-b border-gray-100">
