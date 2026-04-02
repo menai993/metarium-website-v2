@@ -29,9 +29,9 @@ const followUps = [
 function TypingIndicator() {
   return (
     <div className="flex items-center gap-1.5 px-4 py-3">
-      <div className="w-2 h-2 rounded-full bg-electric typing-dot" />
-      <div className="w-2 h-2 rounded-full bg-electric typing-dot" />
-      <div className="w-2 h-2 rounded-full bg-electric typing-dot" />
+      <div className="w-2 h-2 rounded-full bg-accent typing-dot" />
+      <div className="w-2 h-2 rounded-full bg-accent typing-dot" />
+      <div className="w-2 h-2 rounded-full bg-accent typing-dot" />
     </div>
   )
 }
@@ -51,7 +51,7 @@ function formatLine(line: string) {
       return (
         <code
           key={i}
-          className="px-1.5 py-0.5 rounded bg-electric/10 text-cyan-light text-xs font-mono"
+          className="px-1.5 py-0.5 rounded bg-accent/10 text-cyan-light text-xs font-mono"
         >
           {part.slice(1, -1)}
         </code>
@@ -106,7 +106,7 @@ export default function AIShowcase() {
       <div className="absolute inset-0 bg-gradient-to-b from-navy via-[#060a16] to-navy" />
 
       {/* Neural network glow effects */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-electric/[0.03] rounded-full blur-[150px]" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent/[0.03] rounded-full blur-[150px]" />
       <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-cyan-accent/[0.04] rounded-full blur-[100px]" />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6">
@@ -118,14 +118,14 @@ export default function AIShowcase() {
           transition={{ duration: 0.7 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-electric/20 bg-electric/5 text-sm text-electric mb-6">
-            <Sparkles className="w-4 h-4" />
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-accent/20 bg-accent/5 text-sm text-accent mb-6">
+            <Sparkles className="w-4 h-4" strokeWidth={1.5} />
             AI Intelligence
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
             <span className="gradient-text">Your Database Team's AI Co-Pilot</span>
           </h2>
-          <p className="text-lg text-slate-400 max-w-2xl mx-auto">
+          <p className="text-lg text-[#94A3B8] max-w-2xl mx-auto">
             From natural language queries to autonomous incident investigation &mdash;
             AI that understands your databases as well as you do.
           </p>
@@ -139,20 +139,20 @@ export default function AIShowcase() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="max-w-3xl mx-auto"
         >
-          <div className="rounded-2xl border border-white/10 bg-navy-light/80 backdrop-blur-xl overflow-hidden shadow-2xl shadow-electric/5">
+          <div className="rounded-md border border-surface-border bg-surface-card/80 backdrop-blur-xl overflow-hidden shadow-2xl shadow-accent/5">
             {/* Chat header */}
-            <div className="flex items-center justify-between px-6 py-4 border-b border-white/5">
+            <div className="flex items-center justify-between px-6 py-4 border-b border-surface-border/50">
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-electric to-cyan-accent flex items-center justify-center">
-                  <Sparkles className="w-4 h-4 text-white" />
+                <div className="w-8 h-8 rounded-md bg-gradient-to-br from-accent to-cyan-accent flex items-center justify-center">
+                  <Sparkles className="w-4 h-4 text-white" strokeWidth={1.5} />
                 </div>
                 <div>
                   <div className="text-sm font-semibold text-white">Ask Metarium</div>
-                  <div className="text-xs text-slate-500">AI Database Assistant</div>
+                  <div className="text-xs text-[#64748B]">AI Database Assistant</div>
                 </div>
               </div>
-              <div className="flex items-center gap-2 text-xs text-slate-500">
-                <Database className="w-3.5 h-3.5" />
+              <div className="flex items-center gap-2 text-xs text-[#64748B]">
+                <Database className="w-3.5 h-3.5" strokeWidth={1.5} />
                 <span>Context: Reporting Server</span>
               </div>
             </div>
@@ -167,28 +167,28 @@ export default function AIShowcase() {
                 className="flex gap-3 justify-end"
               >
                 <div className="max-w-md">
-                  <div className="bg-electric/20 border border-electric/30 rounded-2xl rounded-br-md px-4 py-3 text-sm text-white">
+                  <div className="bg-accent/20 border border-accent/30 rounded-md rounded-br-sm px-4 py-3 text-sm text-white">
                     {userMessage}
                   </div>
                 </div>
-                <div className="w-8 h-8 rounded-full bg-slate-700 flex items-center justify-center shrink-0">
-                  <User className="w-4 h-4 text-slate-300" />
+                <div className="w-8 h-8 rounded-full bg-surface-border flex items-center justify-center shrink-0">
+                  <User className="w-4 h-4 text-[#94A3B8]" strokeWidth={1.5} />
                 </div>
               </motion.div>
 
               {/* AI response */}
               {phase !== 'idle' && (
                 <div className="flex gap-3">
-                  <div className="w-8 h-8 rounded-full bg-gradient-to-br from-electric to-cyan-accent flex items-center justify-center shrink-0">
-                    <Sparkles className="w-4 h-4 text-white" />
+                  <div className="w-8 h-8 rounded-full bg-gradient-to-br from-accent to-cyan-accent flex items-center justify-center shrink-0">
+                    <Sparkles className="w-4 h-4 text-white" strokeWidth={1.5} />
                   </div>
                   <div className="max-w-lg">
                     {phase === 'typing' ? (
-                      <div className="glass-card rounded-2xl rounded-bl-md">
+                      <div className="glass-card rounded-md rounded-bl-sm">
                         <TypingIndicator />
                       </div>
                     ) : (
-                      <div className="glass-card rounded-2xl rounded-bl-md px-4 py-3 text-sm text-slate-300 leading-relaxed">
+                      <div className="glass-card rounded-md rounded-bl-sm px-4 py-3 text-sm text-[#94A3B8] leading-relaxed">
                         {streamedLines.map((line, i) => (
                           <div key={i} className={line === '' ? 'h-2' : 'mb-1'}>
                             {line && formatLine(line)}
@@ -196,7 +196,7 @@ export default function AIShowcase() {
                         ))}
                         {phase === 'streaming' && (
                           <motion.span
-                            className="inline-block w-2 h-4 bg-electric ml-0.5"
+                            className="inline-block w-2 h-4 bg-accent ml-0.5"
                             animate={{ opacity: [1, 0] }}
                             transition={{ duration: 0.5, repeat: Infinity }}
                           />
@@ -218,7 +218,7 @@ export default function AIShowcase() {
                   {followUps.map((text) => (
                     <button
                       key={text}
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-electric/20 text-xs text-electric hover:bg-electric/10 transition-colors"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md border border-accent/20 text-xs text-accent hover:bg-accent/10 transition-colors"
                     >
                       <ArrowUpRight className="w-3 h-3" />
                       {text}
@@ -229,17 +229,17 @@ export default function AIShowcase() {
             </div>
 
             {/* Input bar */}
-            <div className="px-6 py-4 border-t border-white/5">
-              <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 border border-white/10">
+            <div className="px-6 py-4 border-t border-surface-border/50">
+              <div className="flex items-center gap-3 px-4 py-3 rounded-md bg-white/5 border border-surface-border">
                 <input
                   type="text"
                   readOnly
                   placeholder="Ask anything about your databases..."
-                  className="flex-1 bg-transparent text-sm text-slate-400 outline-none placeholder:text-slate-600"
+                  className="flex-1 bg-transparent text-sm text-[#94A3B8] outline-none placeholder:text-[#64748B] font-mono"
                   tabIndex={-1}
                 />
-                <div className="w-8 h-8 rounded-lg bg-electric/20 flex items-center justify-center">
-                  <ArrowUpRight className="w-4 h-4 text-electric" />
+                <div className="w-8 h-8 rounded-md bg-accent/20 flex items-center justify-center">
+                  <ArrowUpRight className="w-4 h-4 text-accent" strokeWidth={1.5} />
                 </div>
               </div>
             </div>
@@ -251,7 +251,7 @@ export default function AIShowcase() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 1.5, duration: 0.5 }}
-            className="flex justify-center mt-4 text-xs text-slate-600"
+            className="flex justify-center mt-4 text-xs text-[#64748B]"
           >
             Sources: error_logs, wait_stats, performance_metrics, ssis_history &bull; GPT-4o &bull; 1,247 tokens
           </motion.div>
@@ -264,7 +264,7 @@ export default function AIShowcase() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center text-xl font-semibold text-slate-300 mb-8"
+            className="text-center text-xl font-semibold text-[#94A3B8] mb-8"
           >
             The real Ask Metarium interface
           </motion.h3>

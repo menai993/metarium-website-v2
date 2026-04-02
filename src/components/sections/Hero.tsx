@@ -20,7 +20,7 @@ export default function Hero() {
       <Constellation />
 
       {/* Radial gradient overlay */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.12)_0%,transparent_70%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(37,99,235,0.10)_0%,transparent_70%)]" />
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center pt-32 sm:pt-40">
         {/* Logo / brand */}
@@ -30,8 +30,8 @@ export default function Hero() {
           transition={{ duration: 0.6 }}
           className="mb-8"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-sm text-slate-300">
-            <Database className="w-4 h-4 text-electric" />
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-surface-border bg-surface-card/60 text-sm font-medium text-[#94A3B8]">
+            <Database className="w-4 h-4 text-accent" strokeWidth={1.5} />
             Enterprise Database Intelligence
           </span>
         </motion.div>
@@ -50,7 +50,7 @@ export default function Hero() {
             {displayed}
             {!isDone && (
               <motion.span
-                className="inline-block w-[3px] h-[1em] bg-electric ml-1 align-text-bottom"
+                className="inline-block w-[3px] h-[1em] bg-accent ml-1 align-text-bottom"
                 animate={{ opacity: [1, 0] }}
                 transition={{ duration: 0.6, repeat: Infinity }}
               />
@@ -63,7 +63,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.4 }}
-          className="text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed"
+          className="text-lg sm:text-xl text-[#94A3B8] max-w-2xl mx-auto mb-10 leading-relaxed"
         >
           Monitor, Analyze, Govern & Optimize your SQL Server and PostgreSQL fleet
           &mdash; powered by AI.
@@ -78,13 +78,13 @@ export default function Hero() {
         >
           <a
             href="#cta"
-            className="glow-btn relative z-10 inline-flex items-center justify-center px-8 py-4 rounded-full bg-gradient-to-r from-electric to-cyan-accent text-white font-semibold text-lg transition-transform hover:scale-105 active:scale-95"
+            className="glow-btn relative z-10 inline-flex items-center justify-center px-8 py-4 rounded-md bg-accent hover:bg-[#1D4ED8] text-white font-medium text-lg transition-all hover:scale-105 active:scale-95"
           >
             Request Demo
           </a>
           <a
             href="#features"
-            className="inline-flex items-center justify-center px-8 py-4 rounded-full border border-white/20 text-white font-semibold text-lg hover:bg-white/5 transition-all hover:border-white/40"
+            className="inline-flex items-center justify-center px-8 py-4 rounded-md border border-surface-border text-white font-medium text-lg hover:bg-surface-card/50 transition-all hover:border-[#94A3B8]/40"
           >
             See Features
           </a>
@@ -95,18 +95,18 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.9 }}
-          className="flex flex-wrap justify-center gap-6 text-sm text-slate-500"
+          className="flex flex-wrap justify-center gap-6 text-sm text-[#64748B]"
         >
           <div className="flex items-center gap-2">
-            <Database className="w-4 h-4 text-electric" />
+            <Database className="w-4 h-4 text-accent" strokeWidth={1.5} />
             <span>SQL Server + PostgreSQL</span>
           </div>
           <div className="flex items-center gap-2">
-            <Cpu className="w-4 h-4 text-cyan-accent" />
+            <Cpu className="w-4 h-4 text-cyan-accent" strokeWidth={1.5} />
             <span>130+ Automated Handlers</span>
           </div>
           <div className="flex items-center gap-2">
-            <Zap className="w-4 h-4 text-electric" />
+            <Zap className="w-4 h-4 text-accent" strokeWidth={1.5} />
             <span>AI-Powered</span>
           </div>
         </motion.div>
@@ -126,11 +126,11 @@ export default function Hero() {
       {/* Scroll indicator */}
       <motion.a
         href="#overview"
-        className="relative z-10 block mx-auto w-fit pb-8 text-slate-500 hover:text-white transition-colors"
+        className="relative z-10 block mx-auto w-fit pb-8 text-[#64748B] hover:text-white transition-colors"
         animate={{ y: [0, 8, 0] }}
         transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
       >
-        <ChevronDown className="w-6 h-6" />
+        <ChevronDown className="w-6 h-6" strokeWidth={1.5} />
       </motion.a>
     </section>
   )

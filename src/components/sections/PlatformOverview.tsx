@@ -30,7 +30,7 @@ export default function PlatformOverview() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
             <span className="gradient-text">The Metarium Flywheel</span>
           </h2>
-          <p className="text-lg text-slate-400 max-w-2xl mx-auto">
+          <p className="text-lg text-[#94A3B8] max-w-2xl mx-auto">
             A continuous cycle of discovery, monitoring, analysis, governance, and
             optimization &mdash; each stage feeding intelligence into the next.
           </p>
@@ -48,15 +48,15 @@ export default function PlatformOverview() {
             const Icon = item.icon
             return (
               <motion.div key={item.step} variants={itemVariants} className="flex items-center">
-                <div className="glass-card rounded-2xl p-6 text-center w-56 hover:bg-white/[0.06] transition-colors">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-electric/20 to-cyan-accent/20 flex items-center justify-center mx-auto mb-4">
-                    <Icon className="w-7 h-7 text-electric" />
+                <div className="glass-card p-6 text-center hover:bg-[#253348] transition-colors">
+                  <div className="w-14 h-14 rounded-md bg-accent/10 flex items-center justify-center mx-auto mb-4">
+                    <Icon className="w-7 h-7 text-accent" strokeWidth={1.5} />
                   </div>
                   <h3 className="text-lg font-semibold text-white mb-2">{item.step}</h3>
-                  <p className="text-sm text-slate-400 leading-relaxed">{item.description}</p>
+                  <p className="text-sm text-[#94A3B8] leading-relaxed">{item.description}</p>
                 </div>
                 {i < flywheel.length - 1 && (
-                  <ArrowRight className="hidden lg:block w-6 h-6 text-electric/40 mx-2 shrink-0" />
+                  <ArrowRight className="hidden lg:block w-6 h-6 text-accent/40 mx-2 shrink-0" strokeWidth={1.5} />
                 )}
               </motion.div>
             )
@@ -71,10 +71,10 @@ export default function PlatformOverview() {
           transition={{ delay: 1, duration: 0.5 }}
           className="hidden lg:flex justify-center mt-6"
         >
-          <div className="flex items-center gap-2 text-sm text-electric/50">
-            <div className="h-px w-16 bg-gradient-to-r from-transparent to-electric/30" />
+          <div className="flex items-center gap-2 text-sm text-accent/50">
+            <div className="h-px w-16 bg-gradient-to-r from-transparent to-accent/30" />
             <span>Continuous cycle</span>
-            <div className="h-px w-16 bg-gradient-to-l from-transparent to-electric/30" />
+            <div className="h-px w-16 bg-gradient-to-l from-transparent to-accent/30" />
           </div>
         </motion.div>
       </div>

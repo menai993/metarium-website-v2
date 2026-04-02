@@ -57,7 +57,7 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-navy/80 backdrop-blur-xl border-b border-white/5 shadow-lg shadow-black/20'
+          ? 'bg-surface/80 backdrop-blur-xl border-b border-surface-border/50 shadow-lg shadow-black/20'
           : 'bg-transparent'
       }`}
     >
@@ -81,17 +81,17 @@ export default function Navbar() {
               <button
                 key={item.href}
                 onClick={() => handleClick(item.href)}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors relative ${
+                className={`px-4 py-2 rounded-md text-sm font-medium transition-colors relative ${
                   activeNav === item.href
                     ? 'text-white'
-                    : 'text-slate-400 hover:text-white'
+                    : 'text-[#94A3B8] hover:text-white'
                 }`}
               >
                 {item.label}
                 {activeNav === item.href && (
                   <motion.div
                     layoutId="activeNav"
-                    className="absolute inset-0 bg-white/10 rounded-lg"
+                    className="absolute inset-0 bg-white/10 rounded-md"
                     transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                   />
                 )}
@@ -103,7 +103,7 @@ export default function Navbar() {
           <div className="hidden md:block">
             <button
               onClick={() => handleClick('cta')}
-              className="px-5 py-2 rounded-full bg-gradient-to-r from-electric to-cyan-accent text-white text-sm font-semibold hover:opacity-90 transition-opacity"
+              className="px-5 py-2 rounded-md bg-accent hover:bg-[#1D4ED8] text-white text-sm font-medium transition-colors"
             >
               Request Demo
             </button>
@@ -112,10 +112,10 @@ export default function Navbar() {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/10 transition-colors"
+            className="md:hidden p-2 rounded-md text-[#94A3B8] hover:text-white hover:bg-white/10 transition-colors"
             aria-label="Toggle menu"
           >
-            {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            {isOpen ? <X className="w-5 h-5" strokeWidth={1.5} /> : <Menu className="w-5 h-5" strokeWidth={1.5} />}
           </button>
         </div>
       </div>
@@ -128,17 +128,17 @@ export default function Navbar() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden bg-navy/95 backdrop-blur-xl border-b border-white/5 overflow-hidden"
+            className="md:hidden bg-surface/95 backdrop-blur-xl border-b border-surface-border/50 overflow-hidden"
           >
             <div className="px-6 py-4 space-y-1">
               {navItems.map((item) => (
                 <button
                   key={item.href}
                   onClick={() => handleClick(item.href)}
-                  className={`block w-full text-left px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
+                  className={`block w-full text-left px-4 py-3 rounded-md text-sm font-medium transition-colors ${
                     activeNav === item.href
                       ? 'text-white bg-white/10'
-                      : 'text-slate-400 hover:text-white hover:bg-white/5'
+                      : 'text-[#94A3B8] hover:text-white hover:bg-white/5'
                   }`}
                 >
                   {item.label}
@@ -147,7 +147,7 @@ export default function Navbar() {
               <div className="pt-2">
                 <button
                   onClick={() => handleClick('cta')}
-                  className="w-full px-5 py-3 rounded-full bg-gradient-to-r from-electric to-cyan-accent text-white text-sm font-semibold"
+                  className="w-full px-5 py-3 rounded-md bg-accent hover:bg-[#1D4ED8] text-white text-sm font-medium"
                 >
                   Request Demo
                 </button>

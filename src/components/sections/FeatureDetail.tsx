@@ -67,10 +67,10 @@ export default function FeatureDetail({ pillar, index }: Props) {
             transition={{ duration: 0.7 }}
           >
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-electric/20 to-cyan-accent/20 flex items-center justify-center">
-                <Icon className="w-6 h-6 text-electric" />
+              <div className="w-12 h-12 rounded-md bg-accent/10 flex items-center justify-center">
+                <Icon className="w-6 h-6 text-accent" strokeWidth={1.5} />
               </div>
-              <span className="text-sm font-medium text-electric uppercase tracking-wider">
+              <span className="text-sm font-medium text-accent uppercase tracking-wider">
                 Pillar {index + 1}
               </span>
             </div>
@@ -78,11 +78,11 @@ export default function FeatureDetail({ pillar, index }: Props) {
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">
               {pillar.tagline}
             </h2>
-            <p className="text-lg text-slate-400 leading-relaxed mb-6">
+            <p className="text-lg text-[#94A3B8] leading-relaxed mb-6">
               {pillar.subheadline}
             </p>
 
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-electric/10 text-electric text-sm font-medium">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-accent/10 text-accent text-sm font-medium">
               <span>{pillar.subFeatures.length} capabilities</span>
             </div>
           </motion.div>
@@ -119,17 +119,17 @@ export default function FeatureDetail({ pillar, index }: Props) {
                 <motion.div
                   key={sub.name}
                   variants={itemVariants}
-                  className="glass-card rounded-xl p-4 hover:bg-white/[0.06] transition-colors group"
+                  className="glass-card p-4 hover:bg-[#253348] transition-colors group"
                 >
                   <div className="flex items-start gap-3">
-                    <div className="w-9 h-9 rounded-lg bg-electric/10 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-electric/20 transition-colors">
-                      <SubIcon className="w-4.5 h-4.5 text-electric" />
+                    <div className="w-9 h-9 rounded-md bg-accent/10 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-accent/20 transition-colors">
+                      <SubIcon className="w-4.5 h-4.5 text-accent" strokeWidth={1.5} />
                     </div>
                     <div className="min-w-0">
                       <h4 className="text-sm font-semibold text-white mb-1 leading-tight">
                         {sub.name}
                       </h4>
-                      <p className="text-xs text-slate-400 leading-relaxed">
+                      <p className="text-xs text-[#94A3B8] leading-relaxed">
                         {sub.description}
                       </p>
                     </div>

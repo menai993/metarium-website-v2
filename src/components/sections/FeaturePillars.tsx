@@ -34,7 +34,7 @@ export default function FeaturePillars() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
             <span className="gradient-text">Everything You Need</span>
           </h2>
-          <p className="text-lg text-slate-400 max-w-2xl mx-auto">
+          <p className="text-lg text-[#94A3B8] max-w-2xl mx-auto">
             Six powerful pillars covering every aspect of database intelligence &mdash;
             from discovery to operations.
           </p>
@@ -54,18 +54,18 @@ export default function FeaturePillars() {
                 key={pillar.id}
                 href={`#${pillar.id}`}
                 variants={cardVariants}
-                className="glass-card glass-card-hover gradient-border rounded-2xl p-8 group cursor-pointer block"
+                className="glass-card glass-card-hover gradient-border p-8 group cursor-pointer block"
               >
-                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-electric/20 to-cyan-accent/20 flex items-center justify-center mb-6 group-hover:from-electric/30 group-hover:to-cyan-accent/30 transition-colors">
-                  <Icon className="w-7 h-7 text-electric group-hover:text-cyan-light transition-colors" />
+                <div className="w-14 h-14 rounded-md bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors">
+                  <Icon className="w-7 h-7 text-accent group-hover:text-cyan-light transition-colors" strokeWidth={1.5} />
                 </div>
                 <h3 className="text-xl font-semibold text-white mb-2">
                   {pillar.headline}
                 </h3>
-                <p className="text-slate-400 text-sm leading-relaxed mb-4">
+                <p className="text-[#94A3B8] text-sm leading-relaxed mb-4">
                   {pillar.subheadline}
                 </p>
-                <span className="text-electric text-sm font-medium group-hover:text-cyan-light transition-colors">
+                <span className="text-accent text-sm font-medium group-hover:text-cyan-light transition-colors">
                   Explore &rarr;
                 </span>
               </motion.a>

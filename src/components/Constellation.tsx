@@ -15,7 +15,7 @@ const NODE_SPEED = 0.3
 const NODE_MIN_RADIUS = 1.5
 const NODE_MAX_RADIUS = 3.5
 const LINE_OPACITY = 0.25
-const NODE_COLOR = { r: 59, g: 130, b: 246 } // electric blue
+const NODE_COLOR = { r: 37, g: 99, b: 235 } // accent blue #2563EB
 const CYAN_COLOR = { r: 6, g: 182, b: 212 } // cyan accent
 
 export default function Constellation() {

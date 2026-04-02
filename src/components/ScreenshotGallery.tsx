@@ -27,18 +27,18 @@ export default function ScreenshotGallery({ id, images, className = '' }: Props)
       className={`relative group ${className}`}
     >
       {/* Glow underneath */}
-      <div className="absolute -inset-4 bg-electric/[0.05] rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="absolute -inset-4 bg-accent/[0.04] rounded-lg blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-      <div className="relative rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-sm shadow-2xl shadow-black/30 overflow-hidden">
+      <div className="relative rounded-md border border-surface-border bg-surface-card shadow-2xl shadow-black/30 overflow-hidden">
         {/* Browser chrome bar */}
-        <div className="flex items-center gap-2 px-4 py-3 bg-white/[0.04] border-b border-white/[0.06]">
+        <div className="flex items-center gap-2 px-4 py-3 bg-surface-card border-b border-surface-border">
           <div className="flex items-center gap-1.5">
-            <div className="w-3 h-3 rounded-full bg-white/10" />
-            <div className="w-3 h-3 rounded-full bg-white/10" />
-            <div className="w-3 h-3 rounded-full bg-white/10" />
+            <div className="w-3 h-3 rounded-full bg-surface-border" />
+            <div className="w-3 h-3 rounded-full bg-surface-border" />
+            <div className="w-3 h-3 rounded-full bg-surface-border" />
           </div>
           <div className="flex-1 mx-4">
-            <div className="h-5 rounded-md bg-white/[0.04] max-w-xs mx-auto" />
+            <div className="h-5 rounded-sm bg-surface-border/50 max-w-xs mx-auto" />
           </div>
         </div>
 
@@ -69,27 +69,27 @@ export default function ScreenshotGallery({ id, images, className = '' }: Props)
               />
               <div
                 data-placeholder
-                className="absolute inset-0 flex-col items-center justify-center gap-3 text-slate-600"
+                className="absolute inset-0 flex-col items-center justify-center gap-3 text-[#64748B]"
                 style={{ display: 'flex' }}
               >
                 <Monitor className="w-10 h-10" />
                 <span className="text-sm font-medium">Screenshot coming soon</span>
-                <span className="text-xs text-slate-700">{images[active].src}</span>
+                <span className="text-xs text-surface-border">{images[active].src}</span>
               </div>
             </motion.div>
           </AnimatePresence>
         </div>
 
         {/* Thumbnail strip */}
-        <div className="flex gap-2 p-3 bg-white/[0.02] border-t border-white/[0.06] overflow-x-auto">
+        <div className="flex gap-2 p-3 bg-surface-card border-t border-surface-border overflow-x-auto">
           {images.map((img, i) => (
             <button
               key={i}
               onClick={() => setActive(i)}
-              className={`shrink-0 rounded-lg overflow-hidden border-2 transition-all duration-200 ${
+              className={`shrink-0 rounded-md overflow-hidden border-2 transition-all duration-200 ${
                 active === i
-                  ? 'border-electric shadow-lg shadow-electric/20'
-                  : 'border-white/10 hover:border-white/20 opacity-60 hover:opacity-100'
+                  ? 'border-accent shadow-lg shadow-accent/20'
+                  : 'border-surface-border hover:border-[#94A3B8]/30 opacity-60 hover:opacity-100'
               }`}
             >
               <div className="relative w-24 h-16 bg-navy-lighter/80">
@@ -102,7 +102,7 @@ export default function ScreenshotGallery({ id, images, className = '' }: Props)
                     (e.target as HTMLImageElement).style.display = 'none'
                   }}
                 />
-                <div className="absolute inset-0 flex items-center justify-center text-[10px] text-slate-500 font-medium px-1 text-center">
+                <div className="absolute inset-0 flex items-center justify-center text-[10px] text-[#64748B] font-medium px-1 text-center">
                   {img.label}
                 </div>
               </div>

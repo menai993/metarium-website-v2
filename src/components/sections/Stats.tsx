@@ -36,7 +36,7 @@ function StatCard({
           </>
         )}
       </div>
-      <div className="text-sm text-slate-400 font-medium">{label}</div>
+      <div className="text-sm text-[#94A3B8] font-medium">{label}</div>
     </motion.div>
   )
 }
@@ -60,12 +60,12 @@ export default function Stats() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
             <span className="gradient-text">Platform at a Glance</span>
           </h2>
-          <p className="text-lg text-slate-400 max-w-xl mx-auto">
+          <p className="text-lg text-[#94A3B8] max-w-xl mx-auto">
             Enterprise-grade capabilities, all out of the box.
           </p>
         </motion.div>
 
-        <div className="glass-card rounded-2xl">
+        <div className="glass-card">
           <div className="grid grid-cols-2 md:grid-cols-3 divide-x divide-y divide-white/5">
             {stats.map((stat, i) => (
               <StatCard

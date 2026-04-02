@@ -49,7 +49,7 @@ export default function Differentiators() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
             <span className="gradient-text">Why Metarium?</span>
           </h2>
-          <p className="text-lg text-slate-400 max-w-2xl mx-auto">
+          <p className="text-lg text-[#94A3B8] max-w-2xl mx-auto">
             What sets us apart from traditional database monitoring tools.
           </p>
         </motion.div>
@@ -66,17 +66,17 @@ export default function Differentiators() {
             <motion.div
               key={item.title}
               variants={cardVariants}
-              className="glass-card rounded-xl p-6 hover:bg-white/[0.06] transition-colors group"
+              className="glass-card p-6 hover:bg-[#253348] transition-colors group"
             >
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-lg bg-electric/10 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-electric/20 transition-colors">
-                  <CheckCircle2 className="w-5 h-5 text-electric" />
+                <div className="w-10 h-10 rounded-md bg-accent/10 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-accent/20 transition-colors">
+                  <CheckCircle2 className="w-5 h-5 text-accent" strokeWidth={1.5} />
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-white mb-1">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-slate-400 leading-relaxed mb-2">
+                  <p className="text-sm text-[#94A3B8] leading-relaxed mb-2">
                     {item.description}
                   </p>
                   <p className="text-sm text-cyan-accent font-medium">
@@ -102,13 +102,13 @@ export default function Differentiators() {
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                className="glass-card rounded-xl p-6 snap-start shrink-0 w-[300px] sm:w-[340px]"
+                className="glass-card p-6 snap-start shrink-0 w-[300px] sm:w-[340px]"
               >
                 <div className="flex items-center gap-3 mb-3">
-                  <CheckCircle2 className="w-5 h-5 text-electric" />
+                  <CheckCircle2 className="w-5 h-5 text-accent" strokeWidth={1.5} />
                   <h3 className="text-lg font-semibold text-white">{item.title}</h3>
                 </div>
-                <p className="text-sm text-slate-400 leading-relaxed mb-2">
+                <p className="text-sm text-[#94A3B8] leading-relaxed mb-2">
                   {item.description}
                 </p>
                 <p className="text-sm text-cyan-accent font-medium">
@@ -123,16 +123,16 @@ export default function Differentiators() {
             <button
               onClick={() => scroll('left')}
               disabled={!canScrollLeft}
-              className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white disabled:opacity-30 hover:bg-white/10 transition-colors"
+              className="w-10 h-10 rounded-md border border-surface-border flex items-center justify-center text-white disabled:opacity-30 hover:bg-surface-card transition-colors"
             >
-              <ChevronLeft className="w-5 h-5" />
+              <ChevronLeft className="w-5 h-5" strokeWidth={1.5} />
             </button>
             <button
               onClick={() => scroll('right')}
               disabled={!canScrollRight}
-              className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white disabled:opacity-30 hover:bg-white/10 transition-colors"
+              className="w-10 h-10 rounded-md border border-surface-border flex items-center justify-center text-white disabled:opacity-30 hover:bg-surface-card transition-colors"
             >
-              <ChevronRight className="w-5 h-5" />
+              <ChevronRight className="w-5 h-5" strokeWidth={1.5} />
             </button>
           </div>
         </div>
