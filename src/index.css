@@ -106,28 +106,14 @@ body {
   border-color: rgba(37, 99, 235, 0.4);
 }
 
-/* Gradient border */
+/* Gradient border — accent border on hover */
 .gradient-border {
   position: relative;
+  transition: border-color 0.3s;
 }
 
-.gradient-border::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 1px;
-  background: linear-gradient(135deg, #2563EB, #06b6d4);
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask-composite: exclude;
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.gradient-border:hover::before {
-  opacity: 1;
+.gradient-border:hover {
+  border-color: #2563EB;
 }
 
 /* Glow button */
