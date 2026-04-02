@@ -1,0 +1,24 @@
+interface Props {
+  className?: string
+  size?: number
+}
+
+export default function MetariumIcon({ className = '', size = 32 }: Props) {
+  return (
+    <svg
+      viewBox="0 0 100 120"
+      width={size}
+      height={size * 1.2}
+      fill="none"
+      className={className}
+    >
+      <path d="M6 18 L18 8 L18 102 L6 112 Z" fill="#1b3a6b" />
+      <path d="M22 10 L34 2 L34 98 L22 106 Z" fill="#1a2d5a" />
+      <path d="M42 22 L54 14 L54 48 L42 56 Z" fill="#1a2d5a" />
+      <path d="M42 58 L54 50 L54 72 L42 80 Z" fill="#22b8cf" />
+      <path d="M42 82 L54 74 L54 108 L42 116 Z" fill="#1b3a6b" />
+      <path d="M62 8 L74 16 L74 106 L62 98 Z" fill="#1a2d5a" />
+      <path d="M78 14 L90 22 L90 112 L78 102 Z" fill="#1b3a6b" />
+    </svg>
+  )
+}
