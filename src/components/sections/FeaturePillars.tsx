@@ -32,11 +32,11 @@ export default function FeaturePillars() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-            <span className="gradient-text">Everything You Need</span>
+            <span className="gradient-text">What's Inside</span>
           </h2>
           <p className="text-lg text-[#94A3B8] max-w-2xl mx-auto">
-            Six powerful pillars covering every aspect of database intelligence &mdash;
-            from discovery to operations.
+            Six pillars covering discovery, monitoring, analysis, AI, governance, and operations.
+            Each one solves a problem you're currently handling with scripts, spreadsheets, or tribal knowledge.
           </p>
         </motion.div>
 

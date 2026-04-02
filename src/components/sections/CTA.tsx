@@ -17,17 +17,17 @@ export default function CTA() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-accent/20 bg-accent/5 text-sm text-accent mb-8">
             <Sparkles className="w-4 h-4" strokeWidth={1.5} />
-            Ready to get started?
+            Stop firefighting. Start engineering.
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
-            Take Control of Your{' '}
-            <span className="gradient-text">Database Fleet</span>
+            Your Database Fleet Deserves{' '}
+            <span className="gradient-text">Better Tooling</span>
           </h2>
 
           <p className="text-lg text-[#94A3B8] mb-10 max-w-xl mx-auto leading-relaxed">
-            See how Metarium can transform your database operations with AI-powered
-            intelligence, automated monitoring, and enterprise governance.
+            We built Metarium because we were tired of stitching together monitoring scripts,
+            spreadsheet inventories, and tribal knowledge. If that sounds familiar, let's talk.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -35,14 +35,14 @@ export default function CTA() {
               href="mailto:contact@metarium.io"
               className="glow-btn relative z-10 inline-flex items-center justify-center gap-2 px-8 py-4 rounded-md bg-accent hover:bg-[#1D4ED8] text-white font-medium text-lg transition-all hover:scale-105 active:scale-95"
             >
-              Request Demo
+              Request a Demo
               <ArrowRight className="w-5 h-5" strokeWidth={1.5} />
             </a>
             <a
               href="#overview"
               className="inline-flex items-center justify-center px-8 py-4 rounded-md border border-surface-border text-white font-medium text-lg hover:bg-surface-card/50 transition-all hover:border-[#94A3B8]/40"
             >
-              Learn More
+              See How It Works
             </a>
           </div>
         </motion.div>

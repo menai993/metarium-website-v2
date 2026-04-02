@@ -3,27 +3,27 @@ import { useRef, useState, useEffect, useCallback } from 'react'
 import { Sparkles, User, ArrowUpRight, Database } from 'lucide-react'
 import ScreenshotFrame from '../ScreenshotFrame'
 
-const userMessage = 'Why is our reporting database slow during morning hours?'
+const userMessage = 'Why is our reporting database slow every morning between 8 and 9 AM?'
 
 const aiResponseLines = [
-  'Based on my analysis of your reporting server metrics from the past 7 days, I\'ve identified three contributing factors:',
+  'I analyzed 7 days of metrics on your reporting server. Three things stand out:',
   '',
-  '**1. Heavy ETL Jobs** \u2014 Your nightly SSIS packages are completing at 8:47 AM on average, overlapping with user query activity by ~45 minutes.',
+  '**1. ETL Overlap:** Your nightly SSIS packages finish at 8:47 AM on average, overlapping with user queries by ~45 minutes. That\'s 12\u201318 concurrent sessions competing for the same I/O.',
   '',
-  '**2. Missing Indexes** \u2014 The `dbo.SalesReport` table has 3 missing indexes that would reduce query cost by an estimated 73%.',
+  '**2. Missing Indexes on `dbo.SalesReport`:** Three missing indexes would reduce query cost by an estimated 73%. One covers the `WHERE OrderDate BETWEEN` pattern that runs 200+ times/day.',
   '',
-  '**3. Blocking Chains** \u2014 Session 247 (report generation) is consistently blocking 12+ sessions during peak hours.',
+  '**3. Blocking Chain from Session 247:** The report generation proc holds a table lock for 3\u20139 seconds, blocking 12+ sessions during peak hours.',
   '',
-  '**Recommended Actions:**',
-  '\u2022 Reschedule ETL completion target to 7:00 AM',
-  '\u2022 Apply the suggested covering index on `SalesReport`',
-  '\u2022 Optimize the report generation query',
+  '**What I\'d do:**',
+  '\u2022 Move ETL completion target to 7:00 AM (saves ~$340/mo in wasted compute)',
+  '\u2022 Apply the covering index on `SalesReport`. Drops that query from 1.8s to ~120ms.',
+  '\u2022 Rewrite the report proc to use `NOLOCK` or snapshot isolation',
 ]
 
 const followUps = [
-  'Analyze the report generation query',
-  'Show me the missing index details',
-  "Compare last week's performance",
+  'Show me the execution plan for that report query',
+  'Generate the missing index CREATE statements',
+  'Compare this week vs. last week\'s wait stats',
 ]
 
 function TypingIndicator() {
@@ -123,11 +123,11 @@ export default function AIShowcase() {
             AI Intelligence
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-            <span className="gradient-text">Your Database Team's AI Co-Pilot</span>
+            <span className="gradient-text">Ask Questions. Get Real Answers.</span>
           </h2>
           <p className="text-lg text-[#94A3B8] max-w-2xl mx-auto">
-            From natural language queries to autonomous incident investigation &mdash;
-            AI that understands your databases as well as you do.
+            Not a chatbot. An AI that has full context on your servers, queries, and workloads.
+            It investigates problems the way a senior DBA would.
           </p>
         </motion.div>
 
@@ -253,7 +253,7 @@ export default function AIShowcase() {
             transition={{ delay: 1.5, duration: 0.5 }}
             className="flex justify-center mt-4 text-xs text-[#64748B]"
           >
-            Sources: error_logs, wait_stats, performance_metrics, ssis_history &bull; GPT-4o &bull; 1,247 tokens
+            Sources: sys.dm_exec_query_stats, wait_stats, ssis_execution_log, blocking_chains &bull; GPT-4o &bull; 1,247 tokens
           </motion.div>
         </motion.div>
 

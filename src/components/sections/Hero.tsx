@@ -6,7 +6,7 @@ import Constellation from '../Constellation'
 
 export default function Hero() {
   const { displayed, isDone } = useTypewriter(
-    'The AI-Powered Database Intelligence Platform',
+    'Database Intelligence That Actually Works',
     40,
     400
   )
@@ -32,7 +32,7 @@ export default function Hero() {
         >
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-surface-border bg-surface-card/60 text-sm font-medium text-[#94A3B8]">
             <Database className="w-4 h-4 text-accent" strokeWidth={1.5} />
-            Enterprise Database Intelligence
+            SQL Server & PostgreSQL Fleet Management
           </span>
         </motion.div>
 
@@ -65,8 +65,8 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.4 }}
           className="text-lg sm:text-xl text-[#94A3B8] max-w-2xl mx-auto mb-10 leading-relaxed"
         >
-          Monitor, Analyze, Govern & Optimize your SQL Server and PostgreSQL fleet
-          &mdash; powered by AI.
+          Monitor, analyze, and optimize your SQL Server and PostgreSQL fleet.
+          AI that understands your actual workloads, not just dashboards.
         </motion.p>
 
         {/* CTA buttons */}
@@ -80,13 +80,13 @@ export default function Hero() {
             href="#cta"
             className="glow-btn relative z-10 inline-flex items-center justify-center px-8 py-4 rounded-md bg-accent hover:bg-[#1D4ED8] text-white font-medium text-lg transition-all hover:scale-105 active:scale-95"
           >
-            Request Demo
+            Request a Demo
           </a>
           <a
             href="#features"
             className="inline-flex items-center justify-center px-8 py-4 rounded-md border border-surface-border text-white font-medium text-lg hover:bg-surface-card/50 transition-all hover:border-[#94A3B8]/40"
           >
-            See Features
+            See How It Works
           </a>
         </motion.div>
 
@@ -103,11 +103,11 @@ export default function Hero() {
           </div>
           <div className="flex items-center gap-2">
             <Cpu className="w-4 h-4 text-cyan-accent" strokeWidth={1.5} />
-            <span>130+ Automated Handlers</span>
+            <span>130+ Automated Data Collectors</span>
           </div>
           <div className="flex items-center gap-2">
             <Zap className="w-4 h-4 text-accent" strokeWidth={1.5} />
-            <span>AI-Powered</span>
+            <span>AI-Powered Investigation</span>
           </div>
         </motion.div>
       </div>

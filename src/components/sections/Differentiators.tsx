@@ -50,7 +50,7 @@ export default function Differentiators() {
             <span className="gradient-text">Why Metarium?</span>
           </h2>
           <p className="text-lg text-[#94A3B8] max-w-2xl mx-auto">
-            What sets us apart from traditional database monitoring tools.
+            Not another monitoring dashboard. Here's what's different.
           </p>
         </motion.div>
 

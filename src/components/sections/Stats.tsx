@@ -58,10 +58,10 @@ export default function Stats() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-            <span className="gradient-text">Platform at a Glance</span>
+            <span className="gradient-text">By the Numbers</span>
           </h2>
           <p className="text-lg text-[#94A3B8] max-w-xl mx-auto">
-            Enterprise-grade capabilities, all out of the box.
+            What ships out of the box. No add-ons, no enterprise tiers.
           </p>
         </motion.div>
 

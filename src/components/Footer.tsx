@@ -8,7 +8,7 @@ export default function Footer() {
           </div>
 
           <p className="text-sm text-[#94A3B8] text-center">
-            The AI-Powered Database Intelligence Platform for SQL Server &amp; PostgreSQL.
+            Database intelligence for SQL Server &amp; PostgreSQL. Monitor, analyze, govern, optimize.
           </p>
 
           <p className="text-sm text-[#64748B]">

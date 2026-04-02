@@ -33,63 +33,63 @@ export const featurePillars: FeaturePillar[] = [
   {
     id: 'discover',
     icon: Compass,
-    headline: 'Discover & Understand',
-    tagline: 'Know Every Corner of Your Database Fleet',
+    headline: 'Discover & Catalog',
+    tagline: 'See Everything. Miss Nothing.',
     subheadline:
-      'Automatic discovery, intelligent cataloging, and business-context enrichment across your entire SQL Server and PostgreSQL estate.',
+      'Auto-discovers every server, database, and object in your SQL Server and PostgreSQL fleet. Builds a searchable catalog with business context. No manual inventory spreadsheets.',
     subFeatures: [
       {
         name: 'Infrastructure Explorer',
         description:
-          'Hierarchical tree view of your entire fleet \u2014 servers, databases, schemas, tables \u2014 all auto-discovered and continuously updated.',
+          'Your full fleet in one tree: servers, databases, schemas, tables. Auto-discovered, auto-updated. No more half-forgotten dev instances.',
         icon: Network,
       },
       {
         name: 'Object Catalog',
         description:
-          'Global searchable inventory of every database object across all servers. Find any table, view, or procedure in seconds.',
+          'Every table, view, and stored procedure across every server, searchable in under a second. Like grep for your entire database estate.',
         icon: Database,
       },
       {
-        name: 'Server Onboarding Wizard',
+        name: 'Server Onboarding',
         description:
-          'Step-by-step guided wizard to add new servers. Connect, configure, and start monitoring in minutes.',
+          'Add a new server in 3 minutes. Guided setup handles connection, permissions check, and initial data collection automatically.',
         icon: UserPlus,
       },
       {
         name: 'SQL Agent Dashboard',
         description:
-          'Monitor all SQL Server Agent jobs across your fleet from a single pane with history and failure tracking.',
+          'Every SQL Agent job across every server, one screen. See what failed, what\'s running long, what hasn\'t run in weeks.',
         icon: Play,
       },
       {
         name: 'Business Glossary',
         description:
-          'Company-wide data dictionary bridging business terminology and database schema with version-controlled definitions.',
+          'Map business terms to actual database columns. Version-controlled, team-editable. "Revenue" finally means the same thing to everyone.',
         icon: BookOpen,
       },
       {
         name: 'Business Context Canvas',
         description:
-          'Visual drag-and-drop editor for documenting data flows, powered by ReactFlow with AI auto-enrichment.',
+          'Drag-and-drop data flow diagrams backed by ReactFlow. AI suggests connections based on your schema.',
         icon: PenTool,
       },
       {
         name: 'Business Processes',
         description:
-          'Document and manage workflows with links to underlying data objects. AI generates process drafts from your schema.',
+          'Document the workflows your data supports. AI drafts process documentation from your schema, then you review and publish.',
         icon: GitMerge,
       },
       {
         name: 'Ownership Matrix',
         description:
-          'Assign owners, define escalation chains, and export accountability records for every database object.',
+          'Know who owns what. Escalation chains, accountability records, exportable. No more "ask Dave, he might know."',
         icon: Users,
       },
       {
         name: 'Unified Search',
         description:
-          'Find anything across the platform \u2014 catalog objects, glossary terms, processes, canvases \u2014 from one search bar.',
+          'One search bar. Catalog objects, glossary terms, processes, canvases. All indexed and ranked.',
         icon: Search,
       },
     ],
@@ -98,44 +98,44 @@ export const featurePillars: FeaturePillar[] = [
     id: 'monitor',
     icon: Activity,
     headline: 'Monitor & Detect',
-    tagline: 'Real-Time Visibility Into Every Heartbeat',
+    tagline: 'Catch Problems Before Your Users Call',
     subheadline:
-      'Live monitoring, instant anomaly detection, and proactive alerting \u2014 so you catch problems before your users do.',
+      'Real-time monitoring across your entire fleet. Anomaly detection with learned baselines, not static thresholds. Alerts that mean something.',
     subFeatures: [
       {
         name: 'Live Monitoring Hub',
         description:
-          'Real-time production dashboard showing active sessions, blocking chains, deadlock tracking, and live summary stats.',
+          'Active sessions, blocking chains, deadlock tracking. All live, all the time. WebSocket-powered, no refresh needed.',
         icon: MonitorDot,
       },
       {
-        name: 'Server Health Monitoring',
+        name: 'Server Health',
         description:
-          'Continuous tracking of CPU, memory, wait statistics, TempDB contention, and error log pattern recognition.',
+          'CPU, memory, wait stats, TempDB contention, error log patterns. Baselines learned automatically. Alerts fire on deviations, not arbitrary numbers.',
         icon: HeartPulse,
       },
       {
         name: 'Storage Analytics',
         description:
-          'Disk and file-level intelligence with growth forecasting, I/O latency analytics, and transaction log management.',
+          'Disk growth forecasting, I/O latency breakdowns, transaction log management. Know when you\'ll run out of space weeks before it happens.',
         icon: HardDrive,
       },
       {
         name: 'Replication Monitoring',
         description:
-          'Unified monitoring for Always On AG, Log Shipping, Transactional Replication, and PostgreSQL WAL replication.',
+          'Always On, Log Shipping, Transactional Replication, PostgreSQL WAL. One screen instead of four different tools.',
         icon: GitBranch,
       },
       {
         name: 'Anomaly Detection',
         description:
-          'AI-powered detection with automatic baseline learning, multi-dimensional scoring, and timeline visualization.',
+          'Multi-dimensional scoring against learned baselines. Not "CPU > 90%" but "this workload pattern hasn\'t been seen before on this server."',
         icon: AlertTriangle,
       },
       {
-        name: 'Alert Rules & Notifications',
+        name: 'Alert Rules',
         description:
-          'Configurable thresholds with multi-channel delivery \u2014 email, webhook, and role-based subscriptions.',
+          'Thresholds you define, delivered where you want: email, webhook, role-based routing. Signal, not noise.',
         icon: Bell,
       },
     ],
@@ -144,86 +144,86 @@ export const featurePillars: FeaturePillar[] = [
     id: 'analyze',
     icon: TrendingUp,
     headline: 'Analyze & Optimize',
-    tagline: 'Turn Data Into Decisions, Automatically',
+    tagline: 'Find the Slow Queries. Fix Them.',
     subheadline:
-      'Performance intelligence, query optimization, data quality scoring, risk assessment, and growth analytics \u2014 unified in one powerful workbench.',
+      'Performance intelligence that actually tells you what to do. Query optimization, data quality scoring, risk assessment, growth forecasting. One workbench, no tab-switching.',
     subFeatures: [
       {
         name: 'Performance Dashboard',
         description:
-          'Morning health check with slow query trends, missing index scores, wait type distribution, and improvement indicators.',
+          'Morning health check: slow query trends, missing index scores, wait type distribution. Spot regressions before standup.',
         icon: BarChart3,
       },
       {
         name: 'Query Analyzer',
         description:
-          'Deep-dive SQL optimization workbench with AI plan explanation, risk scoring, and optimization history tracking.',
+          'Paste a query, get an AI-explained execution plan, risk score, and optimization history. Like having a senior DBA review every query.',
         icon: Code2,
       },
       {
-        name: 'Heavy Query Identification',
+        name: 'Heavy Query Detection',
         description:
-          'Automatically surfaces queries burning the most resources, ranked by duration, CPU, or I/O consumption.',
+          'Top resource consumers ranked by duration, CPU, or I/O. The queries your CFO is paying for, sorted by cost.',
         icon: Flame,
       },
       {
         name: 'AI Query Optimizer',
         description:
-          'AI-powered automatic query rewriting with side-by-side comparison and estimated 5\u201390%+ improvement gains.',
+          'AI rewrites your slow queries with side-by-side comparison. We\'ve seen 5\u201390%+ improvement. One report query went from 1.8s to 120ms.',
         icon: Brain,
       },
       {
-        name: 'Data Quality Dashboard',
+        name: 'Data Quality Scores',
         description:
-          'Unified health scorecard with composite quality scores, freshness status, and data criticality rankings.',
+          'Composite quality scores per table: freshness, completeness, consistency. Scored and ranked so you fix the important stuff first.',
         icon: ClipboardCheck,
       },
       {
-        name: 'Data Freshness Monitoring',
+        name: 'Freshness Monitoring',
         description:
-          'Last-modified timestamps, staleness detection, row count delta tracking, and 30-day trend visualization.',
+          'When was this table last updated? How many rows changed? 30-day trend lines tell you if an ETL silently broke three weeks ago.',
         icon: Clock,
       },
       {
         name: 'Data Profiling',
         description:
-          'Column statistics \u2014 min, max, average, distinct counts, null rates \u2014 with priority-based execution.',
+          'Column-level stats: min, max, average, distinct counts, null rates. Priority-based execution so it doesn\'t crush your production server.',
         icon: Table2,
       },
       {
         name: 'Schema Compare & Drift',
         description:
-          'Automated DDL drift detection with severity classification, schema binding tracking, and comparison history.',
+          'Automated DDL diff between environments. Severity classification helps you focus on changes that actually break things.',
         icon: GitCompare,
       },
       {
         name: 'Growth Analytics',
         description:
-          'Table size trending with growth forecasting, index health scoring, and object popularity ranking.',
+          'Table size trends with forecasting, index health scores, object popularity ranking. Plan capacity based on data, not guesses.',
         icon: LineChart,
       },
       {
         name: 'Risk & Change Management',
         description:
-          'Enterprise risk scorecard 0\u2013100 with schema change scoring, impact analysis, and anomaly correlation.',
+          'Risk score 0\u2013100 for every schema change. Impact analysis across dependent objects. Catches the ALTER TABLE that locks production for 20 minutes.',
         icon: AlertOctagon,
       },
       {
         name: 'Dead Object Analysis',
         description:
-          'Identify unused tables, indexes, and columns with dependency-aware safe-to-delete detection.',
+          'Finds unused tables, indexes, and columns. Dependency-aware safe-to-delete detection. Clean up without breaking anything.',
         icon: Trash2,
       },
       {
         name: 'ETL & Pipeline Monitoring',
         description:
-          'Track SSIS, CDC, Change Tracking, Linked Servers, and Service Broker queue health.',
+          'SSIS, CDC, Change Tracking, Linked Servers, Service Broker. All in one place instead of scattered across SSMS windows.',
         icon: Truck,
       },
       {
         name: 'Maintenance Intelligence',
         description:
-          'Proactive DBCC check scheduling, statistics age monitoring, and corruption detection.',
+          'DBCC check scheduling, statistics age tracking, corruption detection. The maintenance tasks your future self will thank you for.',
         icon: Wrench,
       },
     ],
@@ -232,50 +232,50 @@ export const featurePillars: FeaturePillar[] = [
     id: 'ai-intelligence',
     icon: Sparkles,
     headline: 'AI Intelligence',
-    tagline: "Your Database Team's AI Co-Pilot",
+    tagline: 'Ask Questions. Get Real Answers.',
     subheadline:
-      'From natural language queries to autonomous incident investigation \u2014 AI that understands your databases as well as you do.',
+      'Not a chatbot bolted onto a dashboard. AI that has context on your actual servers, queries, and workloads. Investigates problems the way a senior DBA would.',
     subFeatures: [
       {
-        name: 'Ask Metarium \u2014 AI Chat',
+        name: 'Ask Metarium',
         description:
-          'ChatGPT-style conversational interface with context-scoped conversations and source attribution.',
+          'Natural language conversations grounded in your actual server metrics. Ask "why is prod-sql-03 slow?" and get a real answer.',
         icon: MessageSquare,
       },
       {
         name: 'AI Advisor',
         description:
-          'Intelligent recommendations organized by impact \u2014 Performance, Risk, Architecture, Security \u2014 with confidence scoring.',
+          'Prioritized recommendations across Performance, Risk, Architecture, and Security. Confidence scores so you know what to trust.',
         icon: Lightbulb,
       },
       {
         name: 'Natural Language to SQL',
         description:
-          'Convert business questions to executable SQL automatically. No SQL expertise required.',
+          'Describe what you need in English, get executable SQL. Useful for the data analysts who shouldn\'t need to know about JOINs.',
         icon: Languages,
       },
       {
         name: 'AI Incident Investigation',
         description:
-          'Classic and iterative investigation modes with multi-server support and downloadable reports.',
+          'Multi-turn investigation that asks clarifying questions and narrows root causes. Classic and iterative modes with downloadable reports.',
         icon: FileSearch,
       },
       {
         name: 'Object Explainer',
         description:
-          'Instant AI-generated documentation for any database object with column-by-column breakdowns.',
+          'Point at any table, view, or procedure. AI generates documentation with column breakdowns. The docs you never got around to writing.',
         icon: FileText,
       },
       {
         name: 'AI Analytics Hub',
         description:
-          'Workload profiling, capacity forecasting, migration readiness assessment, and AI-generated reports.',
+          'Workload profiling, capacity forecasting, migration readiness. The analysis that usually takes a consultant two weeks.',
         icon: PieChart,
       },
       {
         name: 'AI Governance',
         description:
-          'Usage dashboards, budget controls, prompt template management (60+), and multi-provider LLM configuration.',
+          'Usage dashboards, budget controls, 60+ prompt templates, multi-provider LLM config. Keep AI costs predictable.',
         icon: DollarSign,
       },
     ],
@@ -284,44 +284,44 @@ export const featurePillars: FeaturePillar[] = [
     id: 'govern',
     icon: Shield,
     headline: 'Govern & Secure',
-    tagline: 'Enterprise Governance Without the Red Tape',
+    tagline: 'Security and Compliance That Updates Itself',
     subheadline:
-      'Security auditing, data classification, compliance reporting, and access control \u2014 automated and always current.',
+      'Who has access to what, is the data classified correctly, are we compliant? Answers that stay current without quarterly manual audits.',
     subFeatures: [
       {
         name: 'Security Hub',
         description:
-          'Comprehensive SQL security dashboard with login inventory, role hierarchy, and permission explorer.',
+          'Login inventory, role hierarchy, permission explorer. Every SQL security question answered from one screen.',
         icon: Lock,
       },
       {
         name: 'Data Classification',
         description:
-          'Column-level PII/PCI/Confidential tracking with risk scoring for GDPR, HIPAA, and SOC2 compliance.',
+          'Column-level PII, PCI, and Confidential tagging with risk scores. Know where the sensitive data actually lives for GDPR, HIPAA, and SOC2.',
         icon: Tag,
       },
       {
         name: 'Compliance Center',
         description:
-          'Encryption monitoring, audit specifications, DDL audit trails, and policy-based compliance scoring.',
+          'Encryption status, audit specs, DDL audit trails, policy-based scoring. Your compliance posture in real-time, not on a spreadsheet from last quarter.',
         icon: FileCheck,
       },
       {
-        name: 'Access Control Dashboard',
+        name: 'Access Control',
         description:
-          'Permissions matrix, role-based access control with custom roles, group management, and audit trails.',
+          'Full permissions matrix with custom roles, group management, and audit trails. See exactly who can do what.',
         icon: KeyRound,
       },
       {
         name: 'Compliance Reports',
         description:
-          'Pre-built templates for SLA, GDPR, Fleet, Cost, and Security reports. Export to PDF/CSV.',
+          'Pre-built templates for SLA, GDPR, Fleet, Cost, and Security reports. PDF and CSV export for auditors who still want paper.',
         icon: FileBarChart,
       },
       {
         name: 'Notification Management',
         description:
-          'Granular role-based subscriptions with multi-channel delivery and severity-based routing rules.',
+          'Role-based subscriptions with severity routing. Critical alerts go to the DBA on-call, not the entire Slack channel.',
         icon: BellRing,
       },
     ],
@@ -329,51 +329,51 @@ export const featurePillars: FeaturePillar[] = [
   {
     id: 'platform-ops',
     icon: Settings,
-    headline: 'Platform & Operations',
-    tagline: 'Mission Control for Your Data Platform',
+    headline: 'Platform Operations',
+    tagline: 'The Control Plane for Everything Else',
     subheadline:
-      'Worker orchestration, schedule management, infrastructure monitoring, and configuration \u2014 all centralized and self-managing.',
+      '130+ automated handlers, schedule management, worker orchestration. The infrastructure that runs quietly so you can focus on actual problems.',
     subFeatures: [
       {
         name: 'Operations Dashboard',
         description:
-          'Real-time handler execution status, schedule adherence, error rates, and system health metrics.',
+          'Handler execution status, schedule adherence, error rates, system health. The ops view that tells you if the platform itself is healthy.',
         icon: Gauge,
       },
       {
         name: 'Active Alerts Center',
         description:
-          'Centralized severity-based alert management with acknowledgment and resolution workflows.',
+          'Every active alert, severity-sorted, with acknowledgment workflows. Resolve, snooze, or escalate. All tracked.',
         icon: AlertTriangle,
       },
       {
         name: 'Infrastructure Center',
         description:
-          'Worker nodes, 130+ execution schedules, data collection status, and handler management per server.',
+          'Worker nodes, 130+ execution schedules, data collection status per server. One screen to manage the whole collection pipeline.',
         icon: Server,
       },
       {
         name: 'Configuration Center',
         description:
-          'Alert rules, notification routing, retention policies, and LLM provider/budget configuration.',
+          'Alert rules, notification routing, retention policies, LLM provider setup. Config changes audit-logged automatically.',
         icon: Sliders,
       },
       {
         name: 'Administration',
         description:
-          'User management, group hierarchies, ownership assignment, tag management, and license activation.',
+          'Users, groups, ownership, tags, licenses. The admin panel that doesn\'t require reading a 50-page guide.',
         icon: UserCog,
       },
       {
         name: 'Problems Dashboard',
         description:
-          'Fleet-wide cross-server problem detection with severity-sorted display and per-server drill-down.',
+          'Fleet-wide cross-server problem detection with severity sorting and drill-down. Patterns across servers you\'d miss looking at them individually.',
         icon: TriangleAlert,
       },
       {
         name: 'Audit Log',
         description:
-          'Complete audit trail of all platform actions \u2014 user activity, config changes, and data access.',
+          'Every platform action logged: user activity, config changes, data access. Because "who changed that?" shouldn\'t take an hour to answer.',
         icon: ScrollText,
       },
     ],
@@ -382,64 +382,64 @@ export const featurePillars: FeaturePillar[] = [
 
 export const differentiators = [
   {
-    title: 'Multi-Engine Support',
+    title: 'SQL Server + PostgreSQL',
     description:
-      'Single platform for both SQL Server and PostgreSQL. Unified governance, monitoring, and analytics without tool sprawl.',
-    highlight: 'One platform, two engines, zero compromises.',
+      'One platform, both engines. Same dashboards, same AI, same governance. No switching between Redgate for SQL Server and pgAdmin for Postgres.',
+    highlight: 'Unified fleet management across both engines.',
   },
   {
-    title: '130+ Automated Handlers',
+    title: '130+ Data Collection Handlers',
     description:
-      'Pre-built data collection handlers covering performance, schema, security, replication, storage, and more.',
-    highlight: 'No custom scripting required.',
+      'Pre-built handlers for performance, schema, security, replication, storage. Collecting data on a schedule you control.',
+    highlight: 'Covers what most teams cobble together with 30+ custom scripts.',
   },
   {
-    title: 'AI-First Architecture',
+    title: 'AI Built Into the Core',
     description:
-      'AI is woven into every feature \u2014 from query optimization to incident investigation to auto-documentation.',
-    highlight: 'Not an add-on. Built in from day one.',
+      'AI assists every workflow: query optimization, incident investigation, documentation, advisor recommendations. Not a sidebar feature.',
+    highlight: 'AI that has context on your actual data. Not generic suggestions.',
   },
   {
-    title: 'Connected Knowledge Graph',
+    title: 'Connected Metadata Graph',
     description:
-      'Glossary terms link to objects, which connect to processes, which map through canvases, which tie to ownership.',
-    highlight: 'Changes flow through every perspective automatically.',
+      'Glossary terms \u2192 database objects \u2192 business processes \u2192 data flow canvases \u2192 ownership. Change one, the connected views update.',
+    highlight: 'Context propagates automatically across the platform.',
   },
   {
-    title: 'Iterative AI Investigation',
+    title: 'Conversational Investigation',
     description:
-      'Multi-turn conversational investigations that ask clarifying questions and progressively narrow root causes.',
-    highlight: 'Not just reports. Real dialogue.',
+      'Multi-turn AI investigations that ask clarifying questions, pull relevant metrics, and progressively narrow root causes.',
+    highlight: 'Debug production issues by asking questions, not writing queries.',
   },
   {
-    title: 'Column-Level Lineage',
+    title: 'Column-Level Data Lineage',
     description:
-      'Track data flow at the individual column level. Know exactly where each column comes from and what depends on it.',
-    highlight: 'Beyond table-to-table. Column precision.',
+      'Track data flow at the column level. Know where each value originates and what downstream depends on it.',
+    highlight: 'Precise enough to trace a single column through your pipeline.',
   },
   {
-    title: 'Real-Time WebSocket',
+    title: 'Real-Time via WebSocket',
     description:
-      'Live data via SignalR WebSocket connections. No polling, no refresh \u2014 see changes as they happen.',
-    highlight: 'Instant. Always current.',
+      'Live data over SignalR WebSocket connections. Monitoring screens update instantly. No polling, no page refresh.',
+    highlight: 'You see blocking chains form in real-time.',
   },
   {
-    title: 'Role-Based Dashboards',
+    title: 'Role-Specific Dashboards',
     description:
-      'Every role sees a tailored experience: DBAs see performance, Engineers see pipelines, Managers see fleet overview.',
-    highlight: 'Personalized from login.',
+      'DBAs see performance and health. Data engineers see pipelines and quality. Managers see fleet summary and costs. Same platform, different views.',
+    highlight: 'Every role gets the view that matters to them.',
   },
   {
-    title: 'Self-Documenting with AI',
+    title: 'AI Auto-Documentation',
     description:
-      'AI writes object descriptions, creates process docs, enriches canvases, and explains query behavior \u2014 automatically.',
-    highlight: 'Your platform documents itself.',
+      'AI generates object descriptions, process docs, canvas annotations, and query explanations. The documentation you never had time to write.',
+    highlight: 'Your database fleet documents itself.',
   },
   {
-    title: 'Enterprise-Grade Architecture',
+    title: 'Production-Grade Architecture',
     description:
-      '.NET 8+ with clean architecture, multi-node worker scalability, leader election, and comprehensive observability.',
-    highlight: 'Built for scale from the start.',
+      '.NET 8+ clean architecture with multi-node worker scaling, leader election, and full observability. Handles fleets of 50+ servers without breaking a sweat.',
+    highlight: 'Built by people who\'ve managed large database estates.',
   },
 ]
 
@@ -448,14 +448,14 @@ export const stats = [
   { label: 'AI Prompt Templates', value: 60, suffix: '+' },
   { label: 'Investigation Tools', value: 30, suffix: '+' },
   { label: 'Supported Engines', value: 2, suffix: '', displayText: 'SQL Server + PostgreSQL' },
-  { label: 'Role-Based Dashboards', value: 6, suffix: ' Roles' },
-  { label: 'LLM Providers', value: 3, suffix: '+' },
+  { label: 'Built-In Dashboards', value: 6, suffix: ' roles' },
+  { label: 'LLM Providers Supported', value: 3, suffix: '+' },
 ]
 
 export const flywheel = [
-  { step: 'Discover', description: 'Auto-discover and catalog your entire database estate', icon: Compass },
-  { step: 'Monitor', description: 'Real-time visibility with instant anomaly detection', icon: Activity },
-  { step: 'Analyze', description: 'AI-powered performance intelligence and optimization', icon: TrendingUp },
-  { step: 'Govern', description: 'Automated compliance, classification, and access control', icon: Shield },
-  { step: 'Optimize', description: 'Continuous improvement driven by AI recommendations', icon: Sparkles },
+  { step: 'Discover', description: 'Auto-discover servers, databases, and objects across your fleet', icon: Compass },
+  { step: 'Monitor', description: 'Real-time health tracking with learned baselines, not static thresholds', icon: Activity },
+  { step: 'Analyze', description: 'Find the slow queries, the risky changes, the growing tables', icon: TrendingUp },
+  { step: 'Govern', description: 'Security, compliance, and access control that stays current automatically', icon: Shield },
+  { step: 'Optimize', description: 'AI-driven recommendations that get smarter as your fleet grows', icon: Sparkles },
 ]

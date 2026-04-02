@@ -28,11 +28,11 @@ export default function PlatformOverview() {
           className="text-center mb-20"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-            <span className="gradient-text">The Metarium Flywheel</span>
+            <span className="gradient-text">How Metarium Works</span>
           </h2>
           <p className="text-lg text-[#94A3B8] max-w-2xl mx-auto">
-            A continuous cycle of discovery, monitoring, analysis, governance, and
-            optimization &mdash; each stage feeding intelligence into the next.
+            Five stages, one continuous loop. Each stage feeds data and context into the next,
+            so the platform gets smarter the longer it runs.
           </p>
         </motion.div>
 
