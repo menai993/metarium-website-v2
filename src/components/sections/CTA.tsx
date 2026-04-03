@@ -42,11 +42,13 @@ export default function CTA() {
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
-            Get <span className="gradient-text">Early Access</span>
+            See What Your Database Fleet Is{' '}
+            <span className="gradient-text">Really Doing</span>
           </h2>
 
           <p className="text-lg text-[#94A3B8] mb-4 max-w-xl mx-auto leading-relaxed">
-            Join the early access program. Get the full platform for free and help shape the future of database fleet intelligence.
+            Join early access to turn raw SQL telemetry into ranked, explainable actions
+            before incidents escalate or costs compound.
           </p>
         </motion.div>
 

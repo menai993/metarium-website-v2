@@ -7,53 +7,53 @@ import {
 const layers = [
   {
     label: 'Presentation Layer',
-    tech: 'React + TypeScript + Tailwind CSS',
+    tech: 'React 19 + TypeScript 5.9 + Tailwind CSS 4',
     icon: Monitor,
-    description: 'Responsive SPA with real-time WebSocket updates, Framer Motion animations, and role-specific dashboards.',
+    description: 'Dashboard-first UI with role-based pages, AI views, and real-time updates via SignalR/WebSocket patterns. Built with Vite 7 and React Router 7.',
   },
   {
     label: 'API Gateway',
-    tech: '.NET 8+ REST API + SignalR',
+    tech: 'ASP.NET Core on .NET 8',
     icon: Globe,
-    description: 'Clean architecture with CQRS pattern, JWT authentication, rate limiting, and real-time event streaming.',
+    description: 'Clean Architecture with MediatR/CQRS patterns, REST APIs, and authentication for local, Windows, and AD/LDAP scenarios plus API key support for service integrations.',
   },
   {
     label: 'AI Engine',
-    tech: 'Multi-Provider LLM Integration',
+    tech: 'OpenAI + Anthropic + Phi-3/Ollama',
     icon: Brain,
-    description: 'Context-aware AI with 60+ prompt templates, multi-turn investigation, and pluggable LLM providers (OpenAI, Azure, Ollama).',
+    description: 'Multi-provider LLM architecture through provider abstraction. Versioned prompt templates from JSON and database-backed config, with handler-specific context assembly and cost/usage governance.',
   },
   {
     label: 'Business Logic',
-    tech: 'Domain Services + Worker Nodes',
+    tech: '117 Handlers + 38 Investigation Tools',
     icon: Layers,
-    description: '130+ automated data collection handlers with leader election, priority scheduling, and multi-node scaling.',
+    description: 'Distributed worker model claims scheduled jobs from shared execution tables with deterministic execution, idempotency controls, leader election, and heartbeat/liveness checks.',
   },
   {
     label: 'Data Layer',
-    tech: 'SQL Server + PostgreSQL',
+    tech: 'SQL Server System of Record',
     icon: Database,
-    description: 'Metadata repository with time-series storage, baseline computation, anomaly scoring, and full audit logging.',
+    description: 'Coordination, inventory, jobs, identity, and AI telemetry/configuration tables. Collector and monitoring tables store snapshots, history, and trend data for scoring, baselines, and change impact analysis.',
   },
   {
     label: 'Security Layer',
-    tech: 'RBAC + Encryption + Audit',
+    tech: 'RBAC + Encrypted Credentials + Audit',
     icon: Shield,
-    description: 'Role-based access control, data classification engine, credential vault, and complete action audit trail.',
+    description: 'System roles (Admin, DBA, Analyst, Viewer, Owner) with object-level ownership and permission mapping. Encrypted credential storage, hashed/salted passwords, and AI interaction auditing with sensitive-pattern masking.',
   },
 ]
 
 const techStack = [
-  { name: '.NET 8+', category: 'Backend' },
-  { name: 'React 18', category: 'Frontend' },
-  { name: 'TypeScript', category: 'Language' },
-  { name: 'SQL Server', category: 'Database' },
-  { name: 'PostgreSQL', category: 'Database' },
-  { name: 'SignalR', category: 'Real-time' },
-  { name: 'Tailwind CSS', category: 'Styling' },
-  { name: 'OpenAI / Azure / Ollama', category: 'AI' },
-  { name: 'Framer Motion', category: 'Animation' },
-  { name: 'Vite', category: 'Build' },
+  { name: '.NET 8', category: 'Backend' },
+  { name: 'ASP.NET Core', category: 'API' },
+  { name: 'EF Core 8.x', category: 'ORM' },
+  { name: 'Microsoft.Data.SqlClient', category: 'Driver' },
+  { name: 'Npgsql 8.0.6', category: 'Driver' },
+  { name: 'React 19.2.0', category: 'Frontend' },
+  { name: 'TypeScript 5.9.x', category: 'Language' },
+  { name: 'Vite 7.2.5', category: 'Build' },
+  { name: 'Tailwind CSS 4.1.18', category: 'Styling' },
+  { name: 'SignalR / WebSocket', category: 'Real-time' },
 ]
 
 const containerVariants = {
@@ -144,11 +144,11 @@ export default function Architecture() {
           <div className="glass-card p-6 sm:p-8">
             <div className="flex flex-col lg:flex-row items-center justify-between gap-4 lg:gap-0">
               {[
-                { icon: Server, label: 'Your Fleet', sub: 'SQL Server & PostgreSQL' },
-                { icon: Cpu, label: '130+ Handlers', sub: 'Scheduled collection' },
-                { icon: Database, label: 'Metadata Store', sub: 'Time-series + baselines' },
-                { icon: Brain, label: 'AI Analysis', sub: 'Context-aware insights' },
-                { icon: Monitor, label: 'Dashboards', sub: 'Real-time via WebSocket' },
+                { icon: Server, label: 'Your Fleet', sub: 'SQL Server & PostgreSQL instances' },
+                { icon: Cpu, label: '117 Handlers', sub: 'Scheduled metadata & metrics' },
+                { icon: Database, label: 'Platform Tables', sub: 'Snapshots, history & trends' },
+                { icon: Brain, label: 'AI + Intelligence', sub: 'Risk scores & recommendations' },
+                { icon: Monitor, label: 'Live Dashboards', sub: 'SignalR real-time delivery' },
               ].map((step, i, arr) => (
                 <div key={step.label} className="flex items-center">
                   <div className="text-center px-4 py-3">

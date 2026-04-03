@@ -444,12 +444,12 @@ export const differentiators = [
 ]
 
 export const stats = [
-  { label: 'Automated Handlers', value: 130, suffix: '+' },
+  { label: 'Execution Handlers', value: 117, suffix: '' },
+  { label: 'Investigation Tools', value: 38, suffix: '' },
   { label: 'AI Prompt Templates', value: 60, suffix: '+' },
-  { label: 'Investigation Tools', value: 30, suffix: '+' },
   { label: 'Supported Engines', value: 2, suffix: '', displayText: 'SQL Server + PostgreSQL' },
-  { label: 'Built-In Dashboards', value: 6, suffix: ' roles' },
-  { label: 'LLM Providers Supported', value: 3, suffix: '+' },
+  { label: 'System Roles', value: 5, suffix: '', displayText: 'Admin \u00b7 DBA \u00b7 Analyst \u00b7 Viewer \u00b7 Owner' },
+  { label: 'LLM Providers', value: 3, suffix: '', displayText: 'OpenAI \u00b7 Anthropic \u00b7 Ollama' },
 ]
 
 export const flywheel = [

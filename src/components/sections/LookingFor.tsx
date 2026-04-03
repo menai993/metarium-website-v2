@@ -6,11 +6,11 @@ const cards = [
     icon: FlaskConical,
     title: 'Beta Testers',
     description:
-      'Get free early access to the full platform. Help shape Metarium with your feedback. We\'re looking for DBAs and data engineers managing SQL Server or PostgreSQL fleets.',
+      'We want teams running mixed SQL Server and PostgreSQL estates to validate signal quality, workflow fit, and rollout safety.',
     highlights: [
-      'Free access during early access program',
-      'Direct line to the developer',
-      'Your feedback drives the roadmap',
+      'Multi-server production environments preferred',
+      'Weekly feedback from DB owners',
+      'Early influence on roadmap',
     ],
     cta: 'Apply for Early Access',
     href: '#cta',
@@ -19,11 +19,11 @@ const cards = [
     icon: TrendingUp,
     title: 'Investors',
     description:
-      'Seed-stage opportunity in AI-powered database intelligence. A growing market with clear enterprise demand and no unified solution.',
+      'Metarium is an early-stage, working product in a large enterprise pain market where performance, risk, and governance are converging.',
     highlights: [
-      'Solo-built production-grade platform',
-      '130+ handlers, AI engine, dual-engine support',
-      'Clear path to enterprise value',
+      'Working product, not slides',
+      'AI plus deep telemetry moat',
+      'Large DBA modernization market',
     ],
     cta: "Let's Talk",
     href: 'mailto:contact@metarium.io?subject=Investment%20Inquiry',
@@ -32,11 +32,11 @@ const cards = [
     icon: Code2,
     title: 'Developers',
     description:
-      'Join the team and help build the future of database fleet management. .NET 8+, React, TypeScript, AI/LLM integration — serious technical challenges.',
+      'We need engineers who can ship across .NET services, React UX, SQL internals, and AI orchestration patterns.',
     highlights: [
-      '.NET 8 + React + TypeScript stack',
-      'AI/LLM integration work',
-      'Shape architecture from the ground up',
+      '.NET 8 and C# depth',
+      'React and TypeScript product work',
+      'Shape the platform from day one',
     ],
     cta: 'Get Involved',
     href: 'mailto:contact@metarium.io?subject=Developer%20Collaboration',

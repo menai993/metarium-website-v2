@@ -5,35 +5,43 @@ import { ChevronDown, HelpCircle } from 'lucide-react'
 const faqs = [
   {
     q: 'Is Metarium production-ready?',
-    a: 'Yes. The core platform is fully functional with 130+ data collection handlers, AI-powered investigation, real-time monitoring, and governance features. We\'re in early access to gather feedback and validate with diverse fleet configurations.',
+    a: 'Metarium has production-grade architecture and deployed-grade components, but product maturity is best described as early access with active hardening. Core systems are functional — we\'re validating with real fleets.',
   },
   {
     q: 'Is it free during early access?',
-    a: 'Yes. Early access partners get full platform access at no cost. In return, we ask for honest feedback on your experience — what works, what doesn\'t, and what you\'d prioritize next.',
+    a: 'Early access pricing is being finalized. If you\'re interested in testing Metarium on your fleet, reach out — we\'re actively looking for partners and will work out terms directly.',
   },
   {
     q: 'What databases are supported?',
-    a: 'SQL Server (2016+) and PostgreSQL (12+). Both engines share the same dashboard, AI, and governance features. MySQL/MariaDB support is on the roadmap.',
+    a: 'SQL Server (2019/2022 verified) and PostgreSQL (16.x verified). Both engines share the same dashboards, AI, and governance features with engine-specific drivers and collectors.',
   },
   {
     q: 'Can I self-host Metarium?',
-    a: 'Yes. Metarium is designed for self-hosted deployment within your infrastructure. Your data never leaves your network. Cloud-hosted and Docker-based deployment options are in progress.',
+    a: 'Yes. The architecture supports on-prem, cloud, and hybrid deployments using Windows services, IIS-hosted API patterns, and Docker-based runtime options. Your data stays in your infrastructure.',
   },
   {
     q: 'How does the AI handle sensitive data?',
-    a: 'AI analysis uses metadata and aggregated metrics — not your actual row-level data. LLM provider configuration is fully under your control: use OpenAI, Azure OpenAI, or self-hosted Ollama for complete data isolation.',
+    a: 'AI handlers use SQL text, metadata, and telemetry context. Sensitive patterns (SSN, card numbers, email, phone) are masked automatically, and all AI interactions are logged for auditability.',
   },
   {
-    q: 'What\'s the agent footprint on my servers?',
-    a: 'Metarium uses agentless collection via standard SQL connections. No software is installed on your database servers. Data collection queries are designed to be lightweight with configurable scheduling.',
+    q: 'What is the agent footprint on my servers?',
+    a: 'Monitoring is worker-driven from Metarium nodes, not per-database agents. Target systems are accessed through configured SQL connections and optional OS-level channels. Nothing is installed on your servers.',
   },
   {
     q: 'How many servers can it manage?',
-    a: 'The architecture supports multi-node worker scaling with leader election. It\'s been designed to handle fleets of 50+ servers. During early access, we\'re validating with real-world fleet sizes.',
+    a: 'There is no hardcoded fleet cap. Scale is achieved by adding worker nodes and partitioned scheduling. The architecture supports leader election and multi-node coordination out of the box.',
   },
   {
     q: 'I\'m a developer — can I contribute?',
-    a: 'Absolutely. We\'re looking for .NET, React/TypeScript, and AI/ML engineers interested in building database tooling. Reach out via the contact form or email and let\'s talk about how you can get involved.',
+    a: 'We\'re actively looking for .NET 8/C#, React/TypeScript, SQL internals, and AI orchestration engineers. The contribution model is being formalized — reach out via the contact form to start a conversation.',
+  },
+  {
+    q: 'What permissions are required on monitored databases?',
+    a: 'Metarium is designed around read-oriented collection plus scoped metadata and performance queries. Credential scope is controlled per server configuration — no blanket sysadmin access needed.',
+  },
+  {
+    q: 'Does Metarium support real-time updates?',
+    a: 'Yes. The platform includes SignalR/WebSocket communication patterns for live dashboard updates, operational alerts, and investigation workflow state changes.',
   },
 ]
 

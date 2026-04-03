@@ -65,8 +65,8 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.4 }}
           className="text-lg sm:text-xl text-[#94A3B8] max-w-2xl mx-auto mb-10 leading-relaxed"
         >
-          Monitor, analyze, and optimize your SQL Server and PostgreSQL fleet.
-          AI that understands your actual workloads, not just dashboards.
+          Find the regressions, bottlenecks, and risky changes across your SQL Server
+          and PostgreSQL fleet — before they become incidents.
         </motion.p>
 
         {/* CTA buttons */}
@@ -99,15 +99,15 @@ export default function Hero() {
         >
           <div className="flex items-center gap-2">
             <Database className="w-4 h-4 text-accent" strokeWidth={1.5} />
-            <span>SQL Server + PostgreSQL</span>
+            <span>SQL Server + PostgreSQL Support</span>
           </div>
           <div className="flex items-center gap-2">
             <Cpu className="w-4 h-4 text-cyan-accent" strokeWidth={1.5} />
-            <span>130+ Automated Data Collectors</span>
+            <span>150+ Handlers & Investigation Tools</span>
           </div>
           <div className="flex items-center gap-2">
             <Zap className="w-4 h-4 text-accent" strokeWidth={1.5} />
-            <span>AI-Powered Investigation</span>
+            <span>Multi-Node HA With Leader Election</span>
           </div>
         </motion.div>
       </div>
