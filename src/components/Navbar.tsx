@@ -7,12 +7,14 @@ const navItems = [
   { label: 'Overview', href: 'overview' },
   { label: 'Features', href: 'features' },
   { label: 'AI', href: 'ai-showcase' },
+  { label: 'Architecture', href: 'architecture' },
   { label: 'Why Metarium', href: 'differentiators' },
-  { label: 'Contact', href: 'cta' },
+  { label: 'Join', href: 'join' },
 ]
 
 const sectionIds = [
   'hero',
+  'founder',
   'overview',
   'features',
   'discover',
@@ -22,16 +24,22 @@ const sectionIds = [
   'govern',
   'platform-ops',
   'ai-showcase',
+  'architecture',
+  'roadmap',
   'differentiators',
   'stats',
+  'join',
+  'faq',
   'cta',
 ]
 
 function mapSectionToNav(sectionId: string): string {
-  if (sectionId === 'hero') return 'overview'
+  if (sectionId === 'hero' || sectionId === 'founder') return 'overview'
   if (['discover', 'monitor', 'analyze', 'ai-intelligence', 'govern', 'platform-ops'].includes(sectionId))
     return 'features'
   if (sectionId === 'stats') return 'differentiators'
+  if (sectionId === 'roadmap') return 'architecture'
+  if (sectionId === 'faq' || sectionId === 'cta') return 'join'
   return sectionId
 }
 
@@ -105,7 +113,7 @@ export default function Navbar() {
               onClick={() => handleClick('cta')}
               className="px-5 py-2 rounded-md bg-accent hover:bg-[#1D4ED8] text-white text-sm font-medium transition-colors"
             >
-              Request Demo
+              Early Access
             </button>
           </div>
 
@@ -149,7 +157,7 @@ export default function Navbar() {
                   onClick={() => handleClick('cta')}
                   className="w-full px-5 py-3 rounded-md bg-accent hover:bg-[#1D4ED8] text-white text-sm font-medium"
                 >
-                  Request Demo
+                  Early Access
                 </button>
               </div>
             </div>

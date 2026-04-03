@@ -80,7 +80,7 @@ export default function Hero() {
             href="#cta"
             className="glow-btn relative z-10 inline-flex items-center justify-center px-8 py-4 rounded-md bg-accent hover:bg-[#1D4ED8] text-white font-medium text-lg transition-all hover:scale-105 active:scale-95"
           >
-            Request a Demo
+            Join Early Access
           </a>
           <a
             href="#features"
