@@ -27,18 +27,18 @@ export default function FounderStory() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="glass-card p-8 sm:p-12"
+          className="glass-card p-6 sm:p-8 md:p-12 overflow-hidden"
         >
-          <div className="flex flex-col md:flex-row items-start gap-8">
+          <div className="flex flex-col md:flex-row items-start gap-6 md:gap-8">
             {/* Avatar placeholder */}
             <div className="shrink-0 mx-auto md:mx-0">
-              <div className="w-28 h-28 rounded-md bg-accent/10 border border-accent/20 flex items-center justify-center">
-                <span className="text-4xl font-bold gradient-text">BM</span>
+              <div className="w-24 h-24 md:w-28 md:h-28 rounded-md bg-accent/10 border border-accent/20 flex items-center justify-center">
+                <span className="text-3xl md:text-4xl font-bold gradient-text">BM</span>
               </div>
             </div>
 
             {/* Story */}
-            <div className="flex-1">
+            <div className="flex-1 min-w-0">
               <h3 className="text-2xl font-bold text-white mb-1">
                 Benjamin
               </h3>
@@ -46,27 +46,27 @@ export default function FounderStory() {
                 Founder & Solo Developer
               </p>
 
-              <div className="space-y-4 text-[#94A3B8] leading-relaxed">
+              <div className="space-y-4 text-sm sm:text-base text-[#94A3B8] leading-relaxed">
                 <p>
-                  I spent years managing SQL Server and PostgreSQL fleets, juggling SSMS, pgAdmin,
+                  I spent years managing SQL Server and PostgreSQL fleets — juggling SSMS, pgAdmin,
                   custom monitoring scripts, spreadsheet inventories, and tribal knowledge scattered
                   across wikis that nobody updated.
                 </p>
                 <p>
                   Metarium started because I needed one tool that could discover everything,
-                  monitor it intelligently, and actually explain what's going wrong — not just
-                  flash red when CPU hits 90%. I built the AI investigation engine because I was
-                  tired of manually correlating wait stats, blocking chains, and query plans at 2 AM.
+                  monitor it intelligently, and actually explain what's going wrong. I built
+                  the AI investigation engine because I was tired of manually correlating wait
+                  stats, blocking chains, and query plans at 2 AM.
                 </p>
                 <p>
-                  Every feature in Metarium exists because I hit that problem in production.
-                  130+ data handlers, AI-powered investigation, business context mapping —
-                  it's all here because the alternative was duct tape.
+                  Every feature exists because I hit that problem in production. 117 execution
+                  handlers, 38 investigation tools, AI-powered analysis — it's all here because
+                  the alternative was duct tape.
                 </p>
               </div>
 
               {/* Social links */}
-              <div className="flex items-center gap-4 mt-8">
+              <div className="flex flex-wrap items-center gap-3 mt-8">
                 <a
                   href="https://linkedin.com"
                   target="_blank"
